@@ -1,6 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
-import css from 'styled-jsx/css'
 import './App.css';
 
 import {CssReset, colors, spacers, theme, Button} from '@dhis2/ui-core';
