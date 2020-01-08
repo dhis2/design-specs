@@ -26,15 +26,27 @@ const Avatar = props => (
   </div>
 )
 
-const EmptyComment = (props) => (
-  <div class="comment-wrap">
+const CommentInput = (props) => (
+  <div class="comment-wrap comment-input">
     <div class="avatar-wrap">
       <Avatar initials='MM'/>
     </div>
 
   <div class="input-wrap">
+    {"idle-empty" in props &&
   <TextArea placeholder="Write a comment" rows="1"/>
+  }
+
+    {"active" in props &&
+      <>
+      <TextArea value="a comment which is being written into"/>
+    <div class="extras-wrap">{props.extras}</div>
+    <Button primary small>Save comment</Button><Button secondary small>Cancel</Button>
+    </>
+    }
+
 </div>
+
 <style jsx>
 {`
   .comment-wrap {
@@ -51,38 +63,21 @@ const EmptyComment = (props) => (
   .input-wrap {
     flex-grow: 1;
   }
+  .extras-wrap {
+    margin: ${spacers.dp4} 0 0 0;
+    font-size:14px;
+  }
+
+  .input-wrap button {
+    margin: ${spacers.dp4} ${spacers.dp8} 0 0;
+  }
   `}
 </style>
   </div>
 )
 
-const ActiveComment = props => (
-  <div class="comment-wrap">
-    <div class="avatar-wrap">
-      <Avatar initials='MM'/>
-    </div>
-    <div class="input-wrap">
-      <TextArea value="a comment which is being written into"/>
-    <div class="extras-wrap">{props.extras}
-      <style jsx>
-      {`
-        .extras-wrap {
-          margin: ${spacers.dp4} 0 0 0;
-          font-size:14px;
-        }
-
-        .input-wrap button {
-          margin: ${spacers.dp4} ${spacers.dp8} 0 0;
-        }
-        `}
-      </style>
-    </div>
-    <Button primary small>Save comment</Button><Button secondary small>Cancel</Button>
-  </div>
-  </div>
-)
-
 const DisplayComment = props => (
+  <>
   <div class="comment-wrap display-comment">
     <div class="avatar-wrap">
       <Avatar initials ='MM'/>
@@ -92,7 +87,9 @@ const DisplayComment = props => (
         <span class="author">{props.author}
         </span>
     <span class="timestamp">{props.timestamp}</span>
+    {"edited" in props &&
   <span class="edit-flag">Edited</span>
+  }
   </div>
   <p class="content">
     {props.children}
@@ -101,9 +98,13 @@ const DisplayComment = props => (
     <Action icon={<Like/>}/>
   <Action icon={<Reply/>}/>
 <Action icon={<View/>}/>
+{"logged-in" in props &&
+  <>
 <Action icon={<Share/>}/>
 <Action icon={<Edit/>}/>
 <Action icon={<Delete/>}/>
+</>
+}
   </div>
 
     </div>
@@ -144,9 +145,20 @@ const DisplayComment = props => (
           height:24px;
           margin-right:${spacers.dp12};
         }
+        .replies {
+          margin-left:${spacers.dp24};
+        }
+        .conversation-wrap .replies .display-comment {
+          width: 336px;
+          margin-bottom:${spacers.dp16};
+        }
         `}
     </style>
   </div>
+  <div class="replies">
+    {props.replies}
+  </div>
+  </>
 )
 
 const Action = props => (
@@ -164,6 +176,9 @@ const Conversation = props => (
     {`
       .conversation-wrap .comment-wrap {
         margin-bottom:${spacers.dp8};
+      }
+      .conversation-wrap .comment-input {
+        margin-top: ${spacers.dp16};
       }
       `}
     </style>
@@ -196,15 +211,15 @@ function App() {
     <CssReset/>
 
   <DevExample title="Example: Empty, idle comment input">
-    <EmptyComment />
+    <CommentInput idle-empty />
 </DevExample>
 
 <DevExample title="Example: Active comment with input">
-<ActiveComment />
+<CommentInput active />
 </DevExample>
 
 <DevExample title="Example: Active comment with extra content">
-<ActiveComment extras="some extra custom content"/>
+<CommentInput active extras="some extra custom content"/>
 </DevExample>
 
 <DevExample title="Example: Comment in display mode">
@@ -216,13 +231,13 @@ function App() {
   <DisplayComment author="Example Name" timestamp="Just now">
     Content
   </DisplayComment>
-  <DisplayComment author="Example Name" timestamp="Just now">
+  <DisplayComment author="Currently logged in user" timestamp="2 days ago" logged-in replies={<DisplayComment author="Example Name" timestamp="5 hours ago">This is a reply to the above comment</DisplayComment>}>
     Content
   </DisplayComment>
-  <DisplayComment author="Example Name" timestamp="Just now">
+  <DisplayComment author="Example Name" timestamp="3 days ago" edited>
     Content
   </DisplayComment>
-  <EmptyComment/>
+  <CommentInput idle-empty/>
 </Conversation>
 </DevExample>
 
