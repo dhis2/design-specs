@@ -192,23 +192,26 @@ function App() {
     <>
     <CssReset/>
 
-  <DevExample title="Example: Empty, idle comment input">
+  <DevExample title="Empty, idle comment input">
     <CommentInput idle-empty />
 </DevExample>
 
-<DevExample title="Example: Active comment with input">
+<DevExample title="Active comment with input">
 <CommentInput active />
 </DevExample>
 
-<DevExample title="Example: Active comment with extra content">
+<DevExample title="Active comment with extra content">
 <CommentInput active extras="some extra custom content"/>
 </DevExample>
 
-<DevExample title="Example: Comment in display mode">
+<DevExample title="Comment in display mode" notes="The component comes supplied with a default action bar. If an app wants custom actions, they must compose their own action bar using the icon button components supplied.">
 <DisplayComment author="Logged in user" timestamp="3 days ago">The vaccination result rate is abnormally high in this region. Can this be explained @Siyabonga Okafor? This is an important issue to fix.</DisplayComment>
 </DevExample>
 
-<DevExample title="Example: Conversation">
+<DevExample
+  title="Conversation"
+  notes="Replies to a comment use the same comment component, except the wrapper has a margin left. DHIS2 replies do not support more than one level of replies, so nesting replies on replies is not supported yet."
+  >
   <Conversation>
   <DisplayComment author="Example Name" timestamp="Just now">
     Content
