@@ -3,7 +3,6 @@ import './App.css';
 
 import {CssReset, Button, ButtonStrip, TextArea, colors, spacers} from '@dhis2/ui-core';
 
-import {DevExample} from './assets/DevExample.js';
 import {Like, Reply, View, Share, Edit, Delete} from './assets/icons.js';
 
 const Avatar = props => (
@@ -186,6 +185,25 @@ const Conversation = props => (
   </div>
 )
 
+const DevExample = props => (
+  <div class="dev-example">
+    <p class="dev-title">{props.title}</p>
+    {props.children}
+    <style jsx>
+      {`
+        .dev-example {
+          padding: 0  ${spacers.dp32} ${spacers.dp12};
+          margin-bottom: ${spacers.dp48};
+        }
+        .dev-example .dev-title {
+          font-size: 16px;
+          font-family: monospace;
+          color: ${colors.grey700};
+        }
+        `}
+    </style>
+  </div>
+)
 
 function App() {
   return (
