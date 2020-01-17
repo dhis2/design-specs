@@ -10,6 +10,7 @@ import {
   CssVariables
 } from "@dhis2/ui-core";
 import SpecComment from './components/comment.js';
+import DvStartScreen from './misc-examples/dv-start-screen.js';
 import "./App.css";
 
 export default function App() {
@@ -22,13 +23,22 @@ export default function App() {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
+
+
           <Route path="/comment">
             <BackLink />
             <SpecComment />
           </Route>
+
+          <Route path="/dv-start-screen">
+            <BackLink />
+            <DvStartScreen />
+          </Route>
+
           <Route path="/">
             <Home />
           </Route>
+
         </Switch>
       </div>
     </Router>
@@ -43,6 +53,12 @@ function Home() {
     <ul>
       <li>
         <Link to="/comment">Comment</Link>
+      </li>
+    </ul>
+    Other examples/mockups
+    <ul>
+      <li>
+        <Link to="/dv-start-screen">Data Visualizer: Start Screen</Link>
       </li>
     </ul>
   </nav>
