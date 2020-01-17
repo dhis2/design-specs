@@ -1,5 +1,5 @@
 import React from 'react';
-import '../App.css';
+import './comment.css';
 
 import {
   CssReset,
@@ -108,11 +108,9 @@ const Conversation = props => (
   <div class="conversation-wrap">{props.children}</div>
 );
 
-export default function DemoComment() {
+export default function SpecComment() {
   return (
     <>
-      <CssReset />
-      <CssVariables colors spacers />
 
       <DevExample title="Empty, idle comment input">
         <CommentInput idle-empty />

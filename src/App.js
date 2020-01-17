@@ -5,34 +5,26 @@ import {
   Route,
   Link,
 } from "react-router-dom";
-import DemoComment from './components/comment.js';
+import {
+  CssReset,
+  CssVariables
+} from "@dhis2/ui-core";
+import SpecComment from './components/comment.js';
+import "./App.css";
 
 export default function App() {
   return (
+    <>
+    <CssReset />
+    <CssVariables colors spacers />
     <Router>
       <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/comment">Comment</Link>
-            </li>
-            <li>
-              <Link to="/users">Users</Link>
-            </li>
-          </ul>
-        </nav>
-
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
           <Route path="/comment">
-            <DemoComment />
-          </Route>
-          <Route path="/users">
-            <Users />
+            <BackLink />
+            <SpecComment />
           </Route>
           <Route path="/">
             <Home />
@@ -40,17 +32,25 @@ export default function App() {
         </Switch>
       </div>
     </Router>
+    </>
   );
 }
 
 function Home() {
-  return <h2>Home</h2>;
+  return (
+  <nav>
+    Available Component Specs
+    <ul>
+      <li>
+        <Link to="/comment">Comment</Link>
+      </li>
+    </ul>
+  </nav>
+)
 }
 
-function AComment() {
-  return <h2>Comment</h2>;
-}
-
-function Users() {
-  return <h2>Users</h2>;
-}
+const BackLink = () => (
+  <div class="back-link">
+      <Link to="/">Back to component list</Link>
+  </div>
+)
