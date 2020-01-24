@@ -10,6 +10,7 @@ import {
   CssVariables
 } from "@dhis2/ui-core";
 import SpecComment from './components/comment.js';
+import SpecRichText from './components/richText.js';
 import "./App.css";
 
 export default function App() {
@@ -25,6 +26,10 @@ export default function App() {
           <Route path="/comment">
             <BackLink />
             <SpecComment />
+          </Route>
+          <Route path="/rich-text">
+            <BackLink />
+            <SpecRichText />
           </Route>
           <Route path="/">
             <Home />
@@ -43,6 +48,9 @@ function Home() {
     <ul>
       <li>
         <Link to="/comment">Comment</Link>
+      </li>
+      <li>
+        <Link to="/rich-text">Rich Text</Link>
       </li>
     </ul>
   </nav>
