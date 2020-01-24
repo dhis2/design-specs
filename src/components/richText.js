@@ -3,7 +3,11 @@ import './richText.css';
 
 import {
   Button,
-  TextArea
+  TextArea,
+  Menu,
+  MenuItem,
+  Card,
+  InputField
 } from "@dhis2/ui-core";
 
 import { DevExample } from "../assets/DevExample.js";
@@ -52,9 +56,40 @@ const RichTextPreview = props => (
   </div>
 )
 
+const RichTextHeaderMenu = () => (
+  <Menu dense>
+      <MenuItem dense label="Header Level 1"/>
+      <MenuItem dense label="Header Level 2"/>
+      <MenuItem dense label="Header Level 3"/>
+      <MenuItem dense label="Header Level 4"/>
+      <MenuItem dense label="Header Level 5"/>
+      <MenuItem dense label="Header Level 6"/>
+  </Menu>
+)
+
+const RichTextLinkDialog = () =>(
+  <Card>
+    <div class="link-dialog-content">
+      <InputField dense label="Link address" placeholder="e.g. https://dhis2.org"/>
+      <InputField dense label="Link title (optional)" placeholder="e.g. DHIS2 Homepage"/>
+      <div class="link-dialog-buttons">
+        <Button small primary>Insert link</Button><Button small secondary>Cancel</Button>
+      </div>
+    </div>
+  </Card>
+)
+
+const RichTextMentionsMenu = () => (
+  <Menu dense>
+      <MenuItem dense label="FirstName LastName (username)"/>
+      <MenuItem dense label="FirstName LastName (username)"/>
+      <MenuItem dense label="FirstName LastName (username)"/>
+  </Menu>
+)
+
 const DevRichTextContent = () => (
   <>
-  <h1>h1 Heading 😎</h1>
+  <h1>h1 Heading</h1>
   <h2>h2 Heading</h2>
   <h3>h3 Heading</h3>
   <h4>h4 Heading</h4>
@@ -128,15 +163,21 @@ export default function SpecRichText() {
       </DevExample>
 
       <DevExample title="Header menu">
-
+      <div style={{width: '280px'}}>
+        <RichTextHeaderMenu/>
+      </div>
       </DevExample>
 
       <DevExample title="Link dialog">
-
+        <div style={{width: '300px'}}>
+          <RichTextLinkDialog />
+        </div>
       </DevExample>
 
       <DevExample title="Mentions menu">
-
+      <div style={{width: '380px'}}>
+        <RichTextMentionsMenu />
+      </div>
       </DevExample>
 
       <DevExample title="Preview mode" notes="Toolbar actions are not available during preview mode">

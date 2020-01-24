@@ -24,3 +24,11 @@
   margin-bottom:var(--spacers-dp4);
   text-align: right;
 }
+
+.link-dialog-content {
+  padding: var(--spacers-dp8);
+}
+
+.link-dialog-buttons button {
+  margin-right:var(--spacers-dp8);
+}
