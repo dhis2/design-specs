@@ -9,7 +9,7 @@ import {
   CssReset,
   CssVariables
 } from "@dhis2/ui-core";
-import SpecComment from './components/comment.js';
+import SpecComment from './comgponents/comment.js';
 import SpecRichText from './components/richText.js';
 import "./App.css";
 
@@ -29,19 +29,10 @@ export default function App() {
             <BackLink />
             <SpecComment />
           </Route>
-<<<<<<< HEAD
-
-          <Route path="/dv-start-screen">
-            <BackLink />
-            <DvStartScreen />
-          </Route>
-
-=======
           <Route path="/rich-text">
             <BackLink />
             <SpecRichText />
           </Route>
->>>>>>> 354c153... feat: rich text specs, initial composed items
           <Route path="/">
             <Home />
           </Route>
