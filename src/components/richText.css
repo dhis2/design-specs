@@ -1,0 +1,26 @@
+.rich-text-toolbar {
+  background: var(--colors-grey050);
+  border-radius: 3px;
+  border: 1px solid var(--colors-grey300);
+  padding: var(--spacers-dp4) var(--spacers-dp4) 0;
+  margin-bottom: var(--spacers-dp4);
+}
+
+.toolbar-actions-wrap {
+  display:flex;
+}
+
+.main-actions button {
+  margin-right: var(--spacers-dp8);
+  margin-bottom: var(--spacers-dp4);
+}
+
+.side-actions {
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.toolbar-preview-wrap {
+  margin-bottom:var(--spacers-dp4);
+  text-align: right;
+}

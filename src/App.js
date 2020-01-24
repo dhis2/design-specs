@@ -10,7 +10,7 @@ import {
   CssVariables
 } from "@dhis2/ui-core";
 import SpecComment from './components/comment.js';
-import DvStartScreen from './misc-examples/dv-start-screen.js';
+import SpecRichText from './components/richText.js';
 import "./App.css";
 
 export default function App() {
@@ -29,12 +29,19 @@ export default function App() {
             <BackLink />
             <SpecComment />
           </Route>
+<<<<<<< HEAD
 
           <Route path="/dv-start-screen">
             <BackLink />
             <DvStartScreen />
           </Route>
 
+=======
+          <Route path="/rich-text">
+            <BackLink />
+            <SpecRichText />
+          </Route>
+>>>>>>> 354c153... feat: rich text specs, initial composed items
           <Route path="/">
             <Home />
           </Route>
@@ -53,6 +60,9 @@ function Home() {
     <ul>
       <li>
         <Link to="/comment">Comment</Link>
+      </li>
+      <li>
+        <Link to="/rich-text">Rich Text</Link>
       </li>
     </ul>
     Other examples/mockups
