@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { CssReset, CssVariables } from "@dhis2/ui-core";
 import SpecComment from "./components/comment.js";
 import DvStartScreen from "./misc-examples/dv-start-screen.js";
+import SpecOUTree from "./components/ouTree.js";
 import "./App.css";
 
 export default function App() {
@@ -18,6 +19,10 @@ export default function App() {
             <Route path="/comment">
               <BackLink />
               <SpecComment />
+            </Route>
+            <Route path="/ouTree">
+              <BackLink />
+              <SpecOUTree />
             </Route>
 
             <Route path="/dv-start-screen">
@@ -42,6 +47,9 @@ function Home() {
       <ul>
         <li>
           <Link to="/comment">Comment</Link>
+        </li>
+        <li>
+          <Link to="/ouTree">Organisation Unit Tree</Link>
         </li>
       </ul>
       Other examples/mockups
