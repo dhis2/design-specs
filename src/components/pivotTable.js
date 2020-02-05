@@ -80,7 +80,9 @@ const SimpleTable = () => (
           <td class="jsx-1998007459 value">42.6</td>
           <td class="jsx-1998007459 value">45.0</td>
           <td class="jsx-1998007459 subtotal">2</td>
-          <td class="jsx-1998007459 total">2</td>
+          <td cell-type="total-col" class="jsx-1998007459 total">
+            2
+          </td>
         </tr>
         <tr>
           <td rowspan="1" class="jsx-1998007459 row-header">
@@ -89,7 +91,9 @@ const SimpleTable = () => (
           <td class="jsx-1998007459 value">43.3</td>
           <td class="jsx-1998007459 value">40.9</td>
           <td class="jsx-1998007459 subtotal">2</td>
-          <td class="jsx-1998007459 total">2</td>
+          <td cell-type="total-col" class="jsx-1998007459 total">
+            2
+          </td>
         </tr>
         <tr>
           <td rowspan="1" class="jsx-1998007459 row-header">
@@ -98,7 +102,9 @@ const SimpleTable = () => (
           <td class="jsx-1998007459 value">43.3</td>
           <td class="jsx-1998007459 value">44.1</td>
           <td class="jsx-1998007459 subtotal">2</td>
-          <td class="jsx-1998007459 total">2</td>
+          <td cell-type="total-col" class="jsx-1998007459 total">
+            2
+          </td>
         </tr>
         <tr>
           <td rowspan="1" class="jsx-1998007459 row-header">
@@ -107,7 +113,9 @@ const SimpleTable = () => (
           <td class="jsx-1998007459 value">42.1</td>
           <td class="jsx-1998007459 value">41.1</td>
           <td class="jsx-1998007459 subtotal">2</td>
-          <td class="jsx-1998007459 total">2</td>
+          <td cell-type="total-col" class="jsx-1998007459 total">
+            2
+          </td>
         </tr>
         <tr>
           <td rowspan="1" class="jsx-1998007459 row-header">
@@ -116,7 +124,9 @@ const SimpleTable = () => (
           <td class="jsx-1998007459 value">42.7</td>
           <td class="jsx-1998007459 value">36.7</td>
           <td class="jsx-1998007459 subtotal">2</td>
-          <td class="jsx-1998007459 total">2</td>
+          <td cell-type="total-col" class="jsx-1998007459 total">
+            2
+          </td>
         </tr>
         <tr>
           <td rowspan="1" class="jsx-1998007459 row-header">
@@ -125,7 +135,9 @@ const SimpleTable = () => (
           <td class="jsx-1998007459 value">44.4</td>
           <td class="jsx-1998007459 value">52.2</td>
           <td class="jsx-1998007459 subtotal">2</td>
-          <td class="jsx-1998007459 total">2</td>
+          <td cell-type="total-col" class="jsx-1998007459 total">
+            2
+          </td>
         </tr>
         <tr>
           <td rowspan="1" class="jsx-1998007459 row-header">
@@ -134,7 +146,9 @@ const SimpleTable = () => (
           <td class="jsx-1998007459 value">47.5</td>
           <td class="jsx-1998007459 value">40.3</td>
           <td class="jsx-1998007459 subtotal">2</td>
-          <td class="jsx-1998007459 total">2</td>
+          <td cell-type="total-col" class="jsx-1998007459 total">
+            2
+          </td>
         </tr>
         <tr>
           <td rowspan="1" class="jsx-1998007459 row-header">
@@ -143,7 +157,9 @@ const SimpleTable = () => (
           <td class="jsx-1998007459 value">42.2</td>
           <td class="jsx-1998007459 value">38.7</td>
           <td class="jsx-1998007459 subtotal">2</td>
-          <td class="jsx-1998007459 total">2</td>
+          <td cell-type="total-col" class="jsx-1998007459 total">
+            2
+          </td>
         </tr>
         <tr>
           <td rowspan="1" class="jsx-1998007459 row-header">
@@ -152,7 +168,9 @@ const SimpleTable = () => (
           <td class="jsx-1998007459 value">41.6</td>
           <td class="jsx-1998007459 value">43.5</td>
           <td class="jsx-1998007459 subtotal">2</td>
-          <td class="jsx-1998007459 total">2</td>
+          <td cell-type="total-col" class="jsx-1998007459 total">
+            2
+          </td>
         </tr>
         <tr>
           <td rowspan="1" class="jsx-1998007459 row-header">
@@ -161,7 +179,9 @@ const SimpleTable = () => (
           <td class="jsx-1998007459 value">50.1</td>
           <td class="jsx-1998007459 value">41.6</td>
           <td class="jsx-1998007459 subtotal">2</td>
-          <td class="jsx-1998007459 total">2</td>
+          <td cell-type="total-col" class="jsx-1998007459 total">
+            2
+          </td>
         </tr>
         <tr>
           <td rowspan="1" class="jsx-1998007459 row-header">
@@ -170,7 +190,9 @@ const SimpleTable = () => (
           <td class="jsx-1998007459 value">41.7</td>
           <td class="jsx-1998007459 value">44.6</td>
           <td class="jsx-1998007459 subtotal">2</td>
-          <td class="jsx-1998007459 total">2</td>
+          <td cell-type="total-col" class="jsx-1998007459 total">
+            2
+          </td>
         </tr>
         <tr>
           <td rowspan="1" class="jsx-1998007459 row-header">
@@ -179,7 +201,9 @@ const SimpleTable = () => (
           <td class="jsx-1998007459 value">43.6</td>
           <td class="jsx-1998007459 value">40.0</td>
           <td class="jsx-1998007459 subtotal">2</td>
-          <td class="jsx-1998007459 total">2</td>
+          <td cell-type="total-col" class="jsx-1998007459 total">
+            2
+          </td>
         </tr>
         <tr cell-type="total-row">
           <td rowspan="1" class="jsx-1998007459 empty-header">

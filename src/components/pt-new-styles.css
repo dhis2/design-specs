@@ -91,3 +91,9 @@ div.pivot-table-container-new::-webkit-scrollbar-thumb {
 .pivot-table-container-new tr[cell-type="total-row"] {
   border-top: 2px solid var(--colors-grey600);
 }
+.pivot-table-container-new tr[cell-type="total-row"] td {
+  border-left: 1px solid var(--colors-grey600);
+}
+.pivot-table-container-new td[cell-type="total-col"] {
+  border-left: 2px solid var(--colors-grey600);
+}
