@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { CssReset, CssVariables } from "@dhis2/ui-core";
 import SpecComment from "./components/comment.js";
 import SpecRichText from "./components/richText.js";
+import SpecPTStyle from "./components/pivotTable.js";
 import "./App.css";
 
 export default function App() {
@@ -22,6 +23,10 @@ export default function App() {
             <Route path="/rich-text">
               <BackLink />
               <SpecRichText />
+            </Route>
+            <Route path="/pivot-table-styles">
+              <BackLink />
+              <SpecPTStyle />
             </Route>
             <Route path="/">
               <Home />
@@ -49,6 +54,9 @@ function Home() {
       <ul>
         <li>
           <Link to="/dv-start-screen">Data Visualizer: Start Screen</Link>
+        </li>
+        <li>
+          <Link to="/pivot-table-styles">Pivot Table Styles</Link>
         </li>
       </ul>
     </nav>

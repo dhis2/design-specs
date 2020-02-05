@@ -1,0 +1,99 @@
+div.pivot-table-container-new {
+  overflow: auto;
+  font-size: 11px;
+  letter-spacing: -0.1px;
+  font-family: Roboto-Regular;
+}
+div.pivot-table-container-new::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+div.pivot-table-container-new::-webkit-scrollbar-vertical {
+  width: 8px;
+}
+
+div.pivot-table-container-new::-webkit-scrollbar-horizontal {
+  height: 8px;
+}
+
+div.pivot-table-container-new::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  border: 1px solid white; /* should match background, can't be transparent */
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.pivot-table-container-new table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+  text-align: center;
+  background: red;
+}
+
+.pivot-table-container-new td,
+.pivot-table-container-new th {
+  padding: 0px;
+  border: 1px solid var(--colors-grey500);
+  min-width: 150px;
+  width: 150px;
+  max-width: 150px;
+  min-height: 25px;
+  height: 25px;
+}
+.pivot-table-container-new th {
+  font-weight: normal;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: var(--colors-grey300);
+}
+.pivot-table-container-new th.row-header {
+  z-index: 2 !important;
+}
+.pivot-table-container-new td.row-header,
+.pivot-table-container-new th.row-header {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  background-color: var(--colors-grey300);
+  border-bottom: 1px solid var(--colors-grey500);
+}
+.pivot-table-container-new td.row-header {
+  padding: 0;
+}
+.pivot-table-container-new td.empty-header,
+.pivot-table-container-new th.empty-header {
+  background-color: var(--colors-grey400);
+}
+.pivot-table-container-new td.total-header {
+  background-color: var(--colors-grey200);
+  border-left: 2px solid var(--colors-grey600);
+}
+.pivot-table-container-new td.value {
+  background-color: var(--colors-white);
+}
+.pivot-table-container-new td.value:hover {
+  background-color: var(--colors-blue100);
+}
+.pivot-table-container-new td.subtotal {
+  background-color: var(--colors-grey100);
+}
+.pivot-table-container-new td.total {
+  background-color: var(--colors-grey200);
+  border-left: 2px solid var(--colors-grey600);
+}
+.pivot-table-container-new table tbody tr:hover td {
+  background-color: var(--colors-blue050);
+}
+
+.pivot-table-container-new tr[cell-type="total-row"] {
+  border-top: 2px solid var(--colors-grey600);
+}
+.pivot-table-container-new tr[cell-type="total-row"] td {
+  border-left: 1px solid var(--colors-grey600);
+}
+.pivot-table-container-new td[cell-type="total-col"] {
+  border-left: 2px solid var(--colors-grey600);
+}
