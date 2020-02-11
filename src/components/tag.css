@@ -1,0 +1,36 @@
+.tag {
+  padding:3px 6px;
+  border-radius: 3px;
+  background-color:var(--colors-grey300);
+  display:inline-block;
+  fill:var(--colors-grey700);
+  color:var(--colors-grey900);
+}
+
+.tag.negative {
+  background-color:var(--colors-red100);
+  fill:var(--colors-red800);
+  color:var(--colors-red900);
+}
+
+.tag.neutral {
+  background-color:var(--colors-blue100);
+  fill:var(--colors-blue800);
+  color:var(--colors-blue900);
+}
+
+.tag.valid {
+  background-color: var(--colors-green100);
+  fill:var(--colors-green800);
+  color:var(--colors-green900);
+}
+
+.tag-content {
+  display:flex;
+  font-size: 13px;
+  line-height:13px;
+}
+
+.tag-icon {
+  margin-right:4px;
+}
