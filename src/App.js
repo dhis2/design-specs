@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { CssReset, CssVariables } from "@dhis2/ui-core";
 import SpecComment from "./components/comment.js";
 import SpecRichText from "./components/richText.js";
+import SpecTag from "./components/tag.js"
 import "./App.css";
 
 export default function App() {
@@ -22,6 +23,10 @@ export default function App() {
             <Route path="/rich-text">
               <BackLink />
               <SpecRichText />
+            </Route>
+            <Route path="/tag">
+              <BackLink />
+              <SpecTag />
             </Route>
             <Route path="/">
               <Home />
@@ -43,6 +48,9 @@ function Home() {
         </li>
         <li>
           <Link to="/rich-text">Rich Text</Link>
+        </li>
+        <li>
+          <Link to="/tag">Tag</Link>
         </li>
       </ul>
       Other examples/mockups
