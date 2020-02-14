@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { CssReset, CssVariables } from "@dhis2/ui-core";
 import SpecComment from "./components/comment.js";
 import SpecRichText from "./components/richText.js";
-import SpecTag from "./components/tag.js"
+import SpecTag from "./components/tag.js";
+import MaintenanceFormPage from "./misc-examples/maintenance-form.js";
 import "./App.css";
 
 export default function App() {
@@ -27,6 +28,9 @@ export default function App() {
             <Route path="/tag">
               <BackLink />
               <SpecTag />
+            </Route>
+            <Route path="/maintenance-form">
+              <MaintenanceFormPage />
             </Route>
             <Route path="/">
               <Home />
@@ -57,6 +61,9 @@ function Home() {
       <ul>
         <li>
           <Link to="/dv-start-screen">Data Visualizer: Start Screen</Link>
+        </li>
+        <li>
+          <Link to="/maintenance-form">Maintenance: Form</Link>
         </li>
       </ul>
     </nav>
