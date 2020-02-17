@@ -5,7 +5,14 @@ import {
   InputField,
   TextAreaField,
   SingleSelectField,
-  Button
+  Button,
+  Table,
+  TableRowHead,
+  TableCellHead,
+  TableBody,
+  TableRow,
+  TableCell,
+  Checkbox
 } from "@dhis2/ui-core";
 
 const Header = props => <div class="headerbar"></div>;
@@ -70,10 +77,88 @@ const FormHelperBox = props => (
   </div>
 );
 
+const FormErrors = props => (
+  <div id="form-errors-wrap">
+    <ErrorNoticeBox />
+  </div>
+);
+
 const FormFooter = props => (
   <div id="form-footer">
+    <FormErrors />
     <Button primary>{props.saveAction}</Button>
     <Button secondary>{props.cancelAction}</Button>
+  </div>
+);
+
+const ErrorNoticeBox = props => (
+  <div class="notice-box nb-error">
+    <div class="nb-inner-wrap">
+      <div class="nb-icon">
+        <svg
+          height="24"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m12 2c-5.52 0-10 4.48-10 10s4.48 10 10 10 10-4.48 10-10-4.48-10-10-10zm1 15h-2v-2h2zm0-4h-2v-6h2z"
+            fill="#b71c1c"
+          />
+        </svg>
+      </div>
+      <div class="nb-content">
+        <p class="nb-title">There are some problems with this Data Element</p>
+        <p class="nb-body">
+          Some of the information is missing from the form. Make sure all the
+          required fields are included and filled out and have information this
+          is an error message.
+        </p>
+      </div>
+    </div>
+  </div>
+);
+
+const TableExample = props => (
+  <div class="table-wrap">
+    <Table>
+      <TableBody>
+        <TableRowHead>
+          <TableCellHead></TableCellHead>
+          <TableCellHead>First name</TableCellHead>
+          <TableCellHead>Last name</TableCellHead>
+          <TableCellHead>Registering unit</TableCellHead>
+          <TableCellHead>Program</TableCellHead>
+        </TableRowHead>
+        <TableRow>
+          <TableCell>
+            <Checkbox dense />
+          </TableCell>
+          <TableCell>Siyabonga</TableCell>
+          <TableCell>Afolayan</TableCell>
+          <TableCell>Gambia CHP</TableCell>
+          <TableCell>Malaria case registration</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell>
+            <Checkbox dense />
+          </TableCell>
+          <TableCell>Mwangi</TableCell>
+          <TableCell>Okeke</TableCell>
+          <TableCell>Alkalia CHP</TableCell>
+          <TableCell>TB program</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell>
+            <Checkbox dense checked />
+          </TableCell>
+          <TableCell>Inyene</TableCell>
+          <TableCell>Kariuki</TableCell>
+          <TableCell>Gbainkfay MCHP</TableCell>
+          <TableCell>Malaria case registration</TableCell>
+        </TableRow>
+      </TableBody>
+    </Table>
   </div>
 );
 
@@ -147,6 +232,8 @@ export default function MaintenanceFormPage() {
                   required
                   inputWidth="320px"
                   placeholder="Select an aggregation type"
+                  error
+                  validationText="Aggregation type is required."
                 />
                 <InputField
                   label="Field mask"
@@ -182,6 +269,14 @@ export default function MaintenanceFormPage() {
                   </p>
                 </FormHelperBox>
               </FormSectionSplit>
+            </FormSection>
+          </FormSectionWrap>
+          <FormSectionWrap
+            title="Example of a full width form section"
+            description="Form sections can be full width if there is some special component needed. By default forms should use the smaller widths easier scanning and comprehension."
+          >
+            <FormSection full-width>
+              <TableExample />
             </FormSection>
           </FormSectionWrap>
           <FormFooter

@@ -1,3 +1,4 @@
+/* demo styles */
 .headerbar {
   position: fixed;
   width: 100%;
@@ -5,6 +6,9 @@
   color: blue;
   display: block;
   background-color: #2c6693;
+}
+.table-wrap {
+  width: 1200px;
 }
 
 /* styles */
@@ -130,4 +134,43 @@ body {
 
 #form-footer button {
   margin-right: 8px;
+}
+
+#form-errors-wrap {
+  max-width: 600px;
+  margin-bottom: 16px;
+}
+
+/* notice box styles */
+
+.notice-box {
+  border-radius: 3px;
+  border: 1px solid;
+  color: var(--colors-grey900);
+  padding: 12px 16px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.nb-error {
+  border: 2px solid var(--colors-red500);
+  background-color: var(--colors-red050);
+}
+
+.nb-inner-wrap {
+  display: flex;
+}
+
+.nb-icon {
+  width: 24px;
+  margin-right: 12px;
+}
+
+.nb-content {
+  flex: 1;
+}
+
+.nb-title {
+  font-weight: 500;
+  margin-top: 4px;
 }
