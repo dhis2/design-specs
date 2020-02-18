@@ -131,6 +131,11 @@ td.content-error {
   justify-content: space-between;
 }
 
+.toolbar-left,
+.toolbar-right {
+  display: flex;
+}
+
 .toolbar-left button {
   margin-right: 8px;
 }

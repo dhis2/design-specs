@@ -1,7 +1,7 @@
 import React from "react";
 import "./data-table.css";
 
-import { DropdownButton, Button, Checkbox } from "@dhis2/ui-core";
+import { DropdownButton, Button, Checkbox, Input } from "@dhis2/ui-core";
 
 import { DevExample } from "../assets/DevExample.js";
 import {
@@ -169,6 +169,12 @@ export default function SpecDataTable() {
         notes="Clicking a filter button opens a popover. Popover contents are controlled by the app."
       >
         <DemoFilters />
+      </DevExample>
+      <DevExample
+        title="Search"
+        notes="Search is not built-in, this is just the default way it should be implemented."
+      >
+        <DemoSearch />
       </DevExample>
       <DevExample
         title="Table actions"
@@ -343,6 +349,32 @@ const DemoFilters = () => (
       <ToolbarLeft>
         <DropdownButton secondary>Filter</DropdownButton>
         <DropdownButton secondary>Filter two</DropdownButton>
+      </ToolbarLeft>
+    </TableToolbar>
+    <TableContent>
+      <TableHeader>
+        <TableHeaderCell sortable>Header</TableHeaderCell>
+        <TableHeaderCell sortable>Header</TableHeaderCell>
+        <TableHeaderCell sortable>Header</TableHeaderCell>
+        <TableHeaderCell sortable>Header</TableHeaderCell>
+      </TableHeader>
+      <TableBody>
+        <TableRow>
+          <TableCell>Content</TableCell>
+          <TableCell>Content</TableCell>
+          <TableCell>Content</TableCell>
+          <TableCell>Content</TableCell>
+        </TableRow>
+      </TableBody>
+    </TableContent>
+  </Table>
+);
+
+const DemoSearch = () => (
+  <Table>
+    <TableToolbar>
+      <ToolbarLeft>
+        <Input placeholder="Search" dense />
       </ToolbarLeft>
     </TableToolbar>
     <TableContent>
@@ -586,6 +618,7 @@ const DemoKitchenSink = () => (
   <Table title="Table title">
     <TableToolbar>
       <ToolbarLeft>
+        <Input dense placeholder="Search" />
         <DropdownButton secondary>Filter attribute</DropdownButton>
       </ToolbarLeft>
       <ToolbarRight>
@@ -619,3 +652,5 @@ const DemoKitchenSink = () => (
     <TableFooter>Table footer</TableFooter>
   </Table>
 );
+
+// TODO: Add search bar example
