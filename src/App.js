@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { CssReset, CssVariables } from "@dhis2/ui-core";
 import SpecComment from "./components/comment.js";
 import SpecRichText from "./components/richText.js";
-import SpecTag from "./components/tag.js"
+import SpecTag from "./components/tag.js";
+import SpecDataTable from "./components/data-table.js";
 import "./App.css";
 
 export default function App() {
@@ -28,6 +29,10 @@ export default function App() {
               <BackLink />
               <SpecTag />
             </Route>
+            <Route path="/data-table">
+              <BackLink />
+              <SpecDataTable />
+            </Route>
             <Route path="/">
               <Home />
             </Route>
@@ -51,6 +56,9 @@ function Home() {
         </li>
         <li>
           <Link to="/tag">Tag</Link>
+        </li>
+        <li>
+          <Link to="/data-table">Data Table</Link>
         </li>
       </ul>
       Other examples/mockups
