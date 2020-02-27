@@ -1,0 +1,130 @@
+.color-picker {
+  background: #ffffff;
+  box-shadow: 0 0 1px 0 rgba(64, 75, 90, 0.29),
+    0 3px 8px -2px rgba(64, 75, 90, 0.3);
+  border-radius: 3px;
+  display: inline-block;
+  padding: var(--spacers-dp12);
+}
+
+.palette-wrap-columns {
+  display: flex;
+}
+
+.palette-wrap-columns .set {
+  display: flex;
+  flex-direction: column;
+}
+
+.palette-wrap-columns .set:not(:last-child) {
+  margin-right: var(--spacers-dp8);
+}
+
+.palette-wrap-rows .set {
+  display: flex;
+  flex-direction: row;
+}
+
+.palette-wrap-rows .set:not(:last-child) {
+  margin-bottom: var(--spacers-dp8);
+}
+
+.color-block {
+  width: 24px;
+  height: 24px;
+  border-radius: 3px;
+  position: relative;
+}
+
+.color-block:hover {
+  cursor: pointer;
+}
+
+.selected::before {
+  content: "";
+  position: absolute;
+  display: block;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 5px;
+  border: 2px solid var(--colors-blue600);
+}
+
+.palette-wrap-columns .color-block:not(:last-child) {
+  margin-bottom: var(--spacers-dp8);
+}
+
+.palette-wrap-rows .color-block:not(:last-child) {
+  margin-right: var(--spacers-dp8);
+}
+
+.divider {
+  border-top: 1px solid var(--colors-grey300);
+  margin: var(--spacers-dp12) 0;
+}
+
+.spectrum {
+  height: 80px;
+  background: #fa9d24;
+  border-radius: 3px;
+  margin-bottom: var(--spacers-dp8);
+  position: relative;
+  min-width: 250px;
+}
+
+.spec-demo-1 {
+  position: absolute;
+  inset: 0px;
+  background: rgba(0, 0, 0, 0)
+    linear-gradient(to right, rgb(255, 255, 255), rgba(255, 255, 255, 0)) repeat
+    scroll 0% 0%;
+}
+
+.spec-demo-2 {
+  position: absolute;
+  inset: 0px;
+  background: rgba(0, 0, 0, 0)
+    linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0)) repeat scroll 0% 0%;
+}
+
+.spec-pick {
+  width: 8px;
+  height: 8px;
+  box-shadow: rgb(255, 255, 255) 0px 0px 0px 2px,
+    rgba(0, 0, 0, 0.2) 0px 0px 1px 1px inset, rgba(0, 0, 0, 0.8) 0px 0px 1px 2px;
+  border-radius: 50%;
+  transform: translate(-4px, -4px);
+  position: absolute;
+  top: 8px;
+  left: 240px;
+}
+
+.range {
+  height: 20px;
+  background-image: linear-gradient(
+    270deg,
+    #ff0421 1%,
+    #fd00fd 16%,
+    #2300ff 32%,
+    #01fff9 50%,
+    #00ff0a 65%,
+    #feff00 81%,
+    #ff0800 100%
+  );
+  border-radius: 3px;
+  margin-bottom: var(--spacers-dp8);
+  position: relative;
+}
+
+.range-pick {
+  width: 4px;
+  height: 20px;
+  box-shadow: rgb(255, 255, 255) 0px 0px 0px 2px,
+    rgba(0, 0, 0, 0.2) 0px 0px 1px 1px inset, rgba(0, 0, 0, 0.8) 0px 0px 1px 2px;
+  border-radius: 3px;
+  transform: translate(-4px, 0);
+  position: absolute;
+  left: 40px;
+}
