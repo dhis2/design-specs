@@ -5,6 +5,7 @@ import SpecComment from "./components/comment.js";
 import SpecRichText from "./components/richText.js";
 import SpecTag from "./components/tag.js";
 import SpecDataTable from "./components/data-table.js";
+import SpecColorPicker from "./components/color-picker.js";
 import "./App.css";
 
 export default function App() {
@@ -33,6 +34,10 @@ export default function App() {
               <BackLink />
               <SpecDataTable />
             </Route>
+            <Route path="/color-picker">
+              <BackLink />
+              <SpecColorPicker />
+            </Route>
             <Route path="/">
               <Home />
             </Route>
@@ -59,6 +64,9 @@ function Home() {
         </li>
         <li>
           <Link to="/data-table">Data Table</Link>
+        </li>
+        <li>
+          <Link to="/color-picker">Color Picker</Link>
         </li>
       </ul>
       Other examples/mockups
