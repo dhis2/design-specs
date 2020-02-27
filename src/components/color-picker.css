@@ -36,6 +36,10 @@
   position: relative;
 }
 
+.color-block:hover {
+  cursor: pointer;
+}
+
 .selected::before {
   content: "";
   position: absolute;
