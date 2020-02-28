@@ -1,9 +1,17 @@
 import React from "react";
 import "./color-picker.css";
 
-import { Input } from "@dhis2/ui-core";
+import { Input, Button } from "@dhis2/ui-core";
 
 import { DevExample } from "../assets/DevExample.js";
+
+const RemoveColor = () => (
+  <div class="remove-wrap">
+    <Button secondary small>
+      Remove color
+    </Button>
+  </div>
+);
 
 const Hex = () => (
   <div class="hex">
@@ -60,7 +68,13 @@ ${"rows" in props && "palette-wrap-rows"}
   </div>
 );
 
-const ColorPicker = props => <div class="color-picker">{props.children}</div>;
+const ColorPicker = props => (
+  <div class="color-picker">
+    {props.children}
+    <Divider />
+    <RemoveColor />
+  </div>
+);
 export default function SpecColorPicker() {
   return (
     <>
