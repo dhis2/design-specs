@@ -75,6 +75,7 @@ const ColorPicker = props => (
     <RemoveColor />
   </div>
 );
+
 export default function SpecColorPicker() {
   return (
     <>
@@ -198,7 +199,7 @@ export default function SpecColorPicker() {
       </DevExample>
       <DevExample
         title="Different palette"
-        notes="Component can pass in color 'sets' rendered in columns"
+        notes="Component can pass in color 'sets'"
       >
         <ColorPicker>
           <ColorPickerPalettes columns>
