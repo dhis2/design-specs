@@ -72,6 +72,7 @@
   margin-bottom: var(--spacers-dp8);
   position: relative;
   min-width: 250px;
+  cursor: pointer;
 }
 
 .spec-demo-1 {
@@ -116,6 +117,7 @@
   border-radius: 3px;
   margin-bottom: var(--spacers-dp8);
   position: relative;
+  cursor: pointer;
 }
 
 .range-pick {
@@ -127,4 +129,8 @@
   transform: translate(-4px, 0);
   position: absolute;
   left: 40px;
+}
+
+.remove-wrap {
+  text-align: center;
 }
