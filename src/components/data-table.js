@@ -8,7 +8,8 @@ import {
   MoreDots,
   SortArrows,
   DragHandle,
-  ArrowDown
+  ArrowDown,
+  Search
 } from "./dataTableIcons.js";
 
 // Components
@@ -51,6 +52,24 @@ const HeaderSelectCell = () => (
   </th>
 );
 
+const HeaderSortButton = () => (
+  <span class="header-action-wrap">
+    <SortArrows />
+  </span>
+);
+
+const HeaderSearchButton = () => (
+  <span class="header-action-wrap">
+    <Search />
+  </span>
+);
+
+const HeaderSearch = () => (
+  <div class="header-search-wrap">
+    <Input dense placeholder="Search" />
+  </div>
+);
+
 const TableHeaderCell = props => (
   <th
     className={`
@@ -59,8 +78,12 @@ const TableHeaderCell = props => (
   ${"sortable" in props && " header-sortable"}
   `}
   >
-    {props.children}
-    {"sortable" in props && <SortArrows />}
+    <div class="header-content-wrap">
+      <span class="header-cell-label">{props.children}</span>
+      {"sortable" in props && <HeaderSortButton />}
+      {"searchable" in props && <HeaderSearchButton />}
+    </div>
+    {"search-open" in props && <HeaderSearch />}
   </th>
 );
 
@@ -149,6 +172,67 @@ const TableFooter = props => <div class="table-footer">{props.children}</div>;
 export default function SpecDataTable() {
   return (
     <>
+      <h1>Components</h1>
+      <DevExample title="Header Cell: default">
+        <Table>
+          <TableContent>
+            <TableHeader>
+              <TableHeaderCell>Header</TableHeaderCell>
+            </TableHeader>
+          </TableContent>
+        </Table>
+      </DevExample>
+      <DevExample
+        title="Header Cell: sortable"
+        notes="Clicking anywhere in the header will trigger sorting. Three states: ascending, descending, off."
+      >
+        <Table>
+          <TableContent>
+            <TableHeader>
+              <TableHeaderCell sortable>Header</TableHeaderCell>
+            </TableHeader>
+          </TableContent>
+        </Table>
+      </DevExample>
+      <DevExample
+        title="Header Cell: searchable, idle"
+        notes="Clicking the search icon area toggles the search field"
+      >
+        <Table>
+          <TableContent>
+            <TableHeader>
+              <TableHeaderCell searchable>Header</TableHeaderCell>
+            </TableHeader>
+          </TableContent>
+        </Table>
+      </DevExample>
+      <DevExample
+        title="Header Cell: searchable, active"
+        notes="Clicking the search icon area toggles the search field. toggling off clears active search on column"
+      >
+        <Table>
+          <TableContent>
+            <TableHeader>
+              <TableHeaderCell searchable search-open>
+                Header
+              </TableHeaderCell>
+              <TableHeaderCell searchable search-open>
+                Header
+              </TableHeaderCell>
+              <TableHeaderCell searchable search-open>
+                Header
+              </TableHeaderCell>
+              <TableHeaderCell searchable search-open>
+                Header
+              </TableHeaderCell>
+              <TableHeaderCell searchable search-open>
+                Header
+              </TableHeaderCell>
+            </TableHeader>
+          </TableContent>
+        </Table>
+      </DevExample>
+      <h1>Composed examples</h1>
       <DevExample title="Cell text styles">
         <DemoCellFormatting />
       </DevExample>
@@ -169,6 +253,12 @@ export default function SpecDataTable() {
         notes="Clicking a filter button opens a popover. Popover contents are controlled by the app."
       >
         <DemoFilters />
+      </DevExample>
+      <DevExample
+        title="Inline Column Filters - Idle"
+        notes="Columns can be filtered inline."
+      >
+        <DemoInlineFilters />
       </DevExample>
       <DevExample
         title="Search"
@@ -254,7 +344,9 @@ const DemoColumnSorting = () => (
   <Table>
     <TableContent>
       <TableHeader>
-        <TableHeaderCell sortable>Header</TableHeaderCell>
+        <TableHeaderCell sortable>
+          Header that is longer than the normal
+        </TableHeaderCell>
         <TableHeaderCell sortable>Header</TableHeaderCell>
         <TableHeaderCell sortable>Header</TableHeaderCell>
         <TableHeaderCell sortable>Header</TableHeaderCell>
@@ -357,6 +449,35 @@ const DemoFilters = () => (
         <TableHeaderCell sortable>Header</TableHeaderCell>
         <TableHeaderCell sortable>Header</TableHeaderCell>
         <TableHeaderCell sortable>Header</TableHeaderCell>
+      </TableHeader>
+      <TableBody>
+        <TableRow>
+          <TableCell>Content</TableCell>
+          <TableCell>Content</TableCell>
+          <TableCell>Content</TableCell>
+          <TableCell>Content</TableCell>
+        </TableRow>
+      </TableBody>
+    </TableContent>
+  </Table>
+);
+
+const DemoInlineFilters = () => (
+  <Table>
+    <TableContent>
+      <TableHeader>
+        <TableHeaderCell sortable searchable>
+          Header
+        </TableHeaderCell>
+        <TableHeaderCell sortable searchable>
+          Header
+        </TableHeaderCell>
+        <TableHeaderCell sortable searchable>
+          Header
+        </TableHeaderCell>
+        <TableHeaderCell sortable searchable>
+          Header
+        </TableHeaderCell>
       </TableHeader>
       <TableBody>
         <TableRow>

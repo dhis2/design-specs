@@ -6,6 +6,7 @@ import SpecRichText from "./components/richText.js";
 import SpecTag from "./components/tag.js";
 import SpecDataTable from "./components/data-table.js";
 import SpecColorPicker from "./components/color-picker.js";
+import { StateExp } from "./components/state.js";
 import "./App.css";
 
 export default function App() {
@@ -38,6 +39,10 @@ export default function App() {
               <BackLink />
               <SpecColorPicker />
             </Route>
+            <Route path="/state">
+              <BackLink />
+              <StateExp />
+            </Route>
             <Route path="/">
               <Home />
             </Route>
@@ -67,6 +72,9 @@ function Home() {
         </li>
         <li>
           <Link to="/color-picker">Color Picker</Link>
+        </li>
+        <li>
+          <Link to="/state">State</Link>
         </li>
       </ul>
       Other examples/mockups
