@@ -16,12 +16,11 @@ table.data-table {
   font-size: 14px;
 }
 
-thead th {
+th {
   text-align: left;
   padding: 0 12px;
   height: 36px;
   font-size: 13px;
-  line-height: 15px;
   color: var(--colors-grey800);
   font-weight: normal;
   background-color: var(--colors-grey200);
@@ -36,8 +35,32 @@ thead th.header-sortable:hover {
 thead th.header-sortable:active {
   background-color: var(--colors-grey400);
 }
-thead th.header-sortable svg.sort-arrows {
-  margin-left: 2px;
+
+.header-content-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.header-right .header-content-wrap {
+  justify-content: flex-end;
+}
+
+.header-action-wrap {
+  background: transparent;
+  width: 24px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.header-action-wrap:hover {
+  background: var(--colors-grey400);
+  cursor: pointer;
+}
+
+.header-search-wrap {
+  margin-bottom: var(--spacers-dp4);
 }
 
 th.header-default {
