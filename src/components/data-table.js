@@ -4,90 +4,32 @@ import "./data-table.css";
 import { DropdownButton, Button, Checkbox, Input } from "@dhis2/ui-core";
 
 import { DevExample } from "../assets/DevExample.js";
+
+import Table from './data-table-components/table.js'
+import Toolbar from './data-table-components/toolbar.js'
+import HeaderRow from'./data-table-components/data-header-row.js'
+import HeaderCell from './data-table-components/header-cell.js'
+import HeaderSortControl from './data-table-components/header-sort-control.js'
+import HeaderSearchControl from './data-table-components/header-search-control.js'
+import TableBody from './data-table-components/table-body.js'
+import ContentCell from './data-table-components/content-cell.js'
+
 import {
   MoreDots,
   SortArrows,
   DragHandle,
   ArrowDown,
   Search
-} from "./dataTableIcons.js";
+} from "./data-table-components/dataTableIcons.js";
 
 // Components
 
-const Table = props => (
-  <>
-    <div
-      className={`
-  table-wrap
-  ${"bordered" in props && " bordered"}
-  ${"large" in props && " large-cells"}
-  `}
-    >
-      {"title" in props && <TableTitle>{props.title}</TableTitle>}
-      {props.children}
-    </div>
-  </>
-);
-
-const TableContent = props => (
-  <table class="data-table">{props.children}</table>
-);
-
-const TableHeader = props => (
-  <thead>
-    <tr>
-      {"draggable" in props && <HeaderLeadingCell />}
-      {"expandable" in props && <HeaderLeadingCell />}
-      {"selectable" in props && <HeaderSelectCell />}
-      {props.children}
-    </tr>
-  </thead>
-);
-
-const HeaderLeadingCell = () => <th class="header-leading-icon" />;
-
-const HeaderSelectCell = () => (
-  <th class="header-leading-icon">
-    <Checkbox dense />
-  </th>
-);
-
-const HeaderSortButton = () => (
-  <span class="header-action-wrap">
-    <SortArrows />
-  </span>
-);
-
-const HeaderSearchButton = () => (
-  <span class="header-action-wrap">
-    <Search />
-  </span>
-);
 
 const HeaderSearch = () => (
   <div class="header-search-wrap">
     <Input dense placeholder="Search" />
   </div>
 );
-
-const TableHeaderCell = props => (
-  <th
-    className={`
-  header-default
-  ${"right" in props && " header-right"}
-  ${"sortable" in props && " header-sortable"}
-  `}
-  >
-    <div class="header-content-wrap">
-      <span class="header-cell-label">{props.children}</span>
-      {"sortable" in props && <HeaderSortButton />}
-      {"searchable" in props && <HeaderSearchButton />}
-    </div>
-    {"search-open" in props && <HeaderSearch />}
-  </th>
-);
-
-const TableBody = props => <tbody>{props.children}</tbody>;
 
 const TableRow = props => (
   <>
@@ -121,21 +63,7 @@ const ExpandCell = () => (
   </td>
 );
 
-const TableCell = props => (
-  <td
-    className={`
-    cell-default
-    ${"bordered" in props && " cell-bordered"}
-    ${"editable" in props && " cell-editable"}
-    ${"muted" in props && " content-muted"}
-    ${"valid" in props && " content-valid"}
-    ${"error" in props && " content-error"}
-    ${"right" in props && " cell-right"}
-  `}
-  >
-    {props.children}
-  </td>
-);
+
 
 const TableActionStrip = props => (
   <div class="cell-action-strip">{props.children}</div>
@@ -173,65 +101,23 @@ export default function SpecDataTable() {
   return (
     <>
       <h1>Components</h1>
-      <DevExample title="Header Cell: default">
-        <Table>
-          <TableContent>
-            <TableHeader>
-              <TableHeaderCell>Header</TableHeaderCell>
-            </TableHeader>
-          </TableContent>
-        </Table>
-      </DevExample>
-      <DevExample
-        title="Header Cell: sortable"
-        notes="Clicking anywhere in the header will trigger sorting. Three states: ascending, descending, off."
-      >
-        <Table>
-          <TableContent>
-            <TableHeader>
-              <TableHeaderCell sortable>Header</TableHeaderCell>
-            </TableHeader>
-          </TableContent>
-        </Table>
-      </DevExample>
-      <DevExample
-        title="Header Cell: searchable, idle"
-        notes="Clicking the search icon area toggles the search field"
-      >
-        <Table>
-          <TableContent>
-            <TableHeader>
-              <TableHeaderCell searchable>Header</TableHeaderCell>
-            </TableHeader>
-          </TableContent>
-        </Table>
-      </DevExample>
-      <DevExample
-        title="Header Cell: searchable, active"
-        notes="Clicking the search icon area toggles the search field. toggling off clears active search on column"
-      >
-        <Table>
-          <TableContent>
-            <TableHeader>
-              <TableHeaderCell searchable search-open>
-                Header
-              </TableHeaderCell>
-              <TableHeaderCell searchable search-open>
-                Header
-              </TableHeaderCell>
-              <TableHeaderCell searchable search-open>
-                Header
-              </TableHeaderCell>
-              <TableHeaderCell searchable search-open>
-                Header
-              </TableHeaderCell>
-              <TableHeaderCell searchable search-open>
-                Header
-              </TableHeaderCell>
-            </TableHeader>
-          </TableContent>
-        </Table>
-      </DevExample>
+      <p>data-table exposes the following components:</p>
+      <ul>
+        <li>Table wrapper</li>
+        <li>Table toolbar area</li>
+        <li>Table title</li>
+        <li>Table actions row</li>
+        <li>Table data wrapper (used to keep the title and actions outside of the table element..maybe)</li>
+        <li>Header row</li>
+        <li>Header cell</li>
+        <li>Header cell sort control</li>
+        <li>Header cell filter control</li>
+        <li>Cell</li>
+        <li>Drag cell</li>
+        <li>Select cell</li>
+        <li>Expand cell</li>
+        <li>Footer row</li>
+      </ul>
       <h1>Composed examples</h1>
       <DevExample title="Cell text styles">
         <DemoCellFormatting />
@@ -319,457 +205,434 @@ export default function SpecDataTable() {
 
 const DemoCellFormatting = () => (
   <Table>
-    <TableContent>
-      <TableHeader>
-        <TableHeaderCell>Header</TableHeaderCell>
-        <TableHeaderCell right>Header right</TableHeaderCell>
-        <TableHeaderCell>Header</TableHeaderCell>
-        <TableHeaderCell>Header</TableHeaderCell>
-        <TableHeaderCell>Header</TableHeaderCell>
-      </TableHeader>
+      <HeaderRow>
+        <HeaderCell>Header</HeaderCell>
+        <HeaderCell right>Header right</HeaderCell>
+        <HeaderCell>Header</HeaderCell>
+        <HeaderCell>Header</HeaderCell>
+        <HeaderCell>Header</HeaderCell>
+      </HeaderRow>
       <TableBody>
         <TableRow>
-          <TableCell>Content</TableCell>
-          <TableCell right>Cell right, content default</TableCell>
-          <TableCell muted>Content muted</TableCell>
-          <TableCell valid>Content valid</TableCell>
-          <TableCell error>Content error</TableCell>
+          <ContentCell>Content</ContentCell>
+          <ContentCell right>Cell right, content default</ContentCell>
+          <ContentCell muted>Content muted</ContentCell>
+          <ContentCell valid>Content valid</ContentCell>
+          <ContentCell error>Content error</ContentCell>
         </TableRow>
       </TableBody>
-    </TableContent>
   </Table>
 );
 
 const DemoColumnSorting = () => (
   <Table>
-    <TableContent>
-      <TableHeader>
-        <TableHeaderCell sortable>
-          Header that is longer than the normal
-        </TableHeaderCell>
-        <TableHeaderCell sortable>Header</TableHeaderCell>
-        <TableHeaderCell sortable>Header</TableHeaderCell>
-        <TableHeaderCell sortable>Header</TableHeaderCell>
-      </TableHeader>
+      <HeaderRow>
+        <HeaderCell>
+          Header that is longer than the normal<HeaderSortControl/>
+        </HeaderCell>
+        <HeaderCell label="Header label"><HeaderSortControl/></HeaderCell>
+        <HeaderCell label="Header label"><HeaderSortControl/></HeaderCell>
+        <HeaderCell label="Header label"><HeaderSortControl/></HeaderCell>
+      </HeaderRow>
       <TableBody>
         <TableRow>
-          <TableCell>Content</TableCell>
-          <TableCell>Content</TableCell>
-          <TableCell>Content</TableCell>
-          <TableCell>Content</TableCell>
+          <ContentCell>Content</ContentCell>
+          <ContentCell>Content</ContentCell>
+          <ContentCell>Content</ContentCell>
+          <ContentCell>Content</ContentCell>
         </TableRow>
       </TableBody>
-    </TableContent>
   </Table>
 );
 
 const DemoInlineActions = () => (
   <Table>
-    <TableContent>
-      <TableHeader>
-        <TableHeaderCell>Header</TableHeaderCell>
-        <TableHeaderCell>Header</TableHeaderCell>
-        <TableHeaderCell>Header</TableHeaderCell>
-        <TableHeaderCell right>Actions</TableHeaderCell>
-      </TableHeader>
+      <HeaderRow>
+        <HeaderCell>Header</HeaderCell>
+        <HeaderCell>Header</HeaderCell>
+        <HeaderCell>Header</HeaderCell>
+        <HeaderCell right>Actions</HeaderCell>
+      </HeaderRow>
       <TableBody>
         <TableRow>
-          <TableCell>Content</TableCell>
-          <TableCell>Content</TableCell>
-          <TableCell>Content</TableCell>
-          <TableCell right>
+          <ContentCell>Content</ContentCell>
+          <ContentCell>Content</ContentCell>
+          <ContentCell>Content</ContentCell>
+          <ContentCell right>
             <TableActionStrip>
               <CellAction>Action one</CellAction>
               <CellAction>Action two</CellAction>
             </TableActionStrip>
-          </TableCell>
+          </ContentCell>
         </TableRow>
       </TableBody>
-    </TableContent>
   </Table>
 );
 
 const DemoOverflowActions = () => (
   <Table>
-    <TableContent>
-      <TableHeader>
-        <TableHeaderCell>Header</TableHeaderCell>
-        <TableHeaderCell>Header</TableHeaderCell>
-        <TableHeaderCell>Header</TableHeaderCell>
-        <TableHeaderCell right>Actions</TableHeaderCell>
-      </TableHeader>
+      <HeaderRow>
+        <HeaderCell>Header</HeaderCell>
+        <HeaderCell>Header</HeaderCell>
+        <HeaderCell>Header</HeaderCell>
+        <HeaderCell right>Actions</HeaderCell>
+      </HeaderRow>
       <TableBody>
         <TableRow>
-          <TableCell>Content</TableCell>
-          <TableCell>Content</TableCell>
-          <TableCell>Content</TableCell>
-          <TableCell right>
+          <ContentCell>Content</ContentCell>
+          <ContentCell>Content</ContentCell>
+          <ContentCell>Content</ContentCell>
+          <ContentCell right>
             <TableActionStrip>
               <OverflowActions />
             </TableActionStrip>
-          </TableCell>
+          </ContentCell>
         </TableRow>
       </TableBody>
-    </TableContent>
   </Table>
 );
 
 const DemoTitle = () => (
-  <Table title="Titled table">
-    <TableContent>
-      <TableHeader>
-        <TableHeaderCell sortable>Header</TableHeaderCell>
-        <TableHeaderCell sortable>Header</TableHeaderCell>
-        <TableHeaderCell sortable>Header</TableHeaderCell>
-        <TableHeaderCell sortable>Header</TableHeaderCell>
-      </TableHeader>
+  <Table>
+      <Toolbar>
+        Title
+      </Toolbar>
+      <HeaderRow>
+        <HeaderCell sortable>Header</HeaderCell>
+        <HeaderCell sortable>Header</HeaderCell>
+        <HeaderCell sortable>Header</HeaderCell>
+        <HeaderCell sortable>Header</HeaderCell>
+      </HeaderRow>
       <TableBody>
         <TableRow>
-          <TableCell>Content</TableCell>
-          <TableCell>Content</TableCell>
-          <TableCell>Content</TableCell>
-          <TableCell>Content</TableCell>
+          <ContentCell>Content</ContentCell>
+          <ContentCell>Content</ContentCell>
+          <ContentCell>Content</ContentCell>
+          <ContentCell>Content</ContentCell>
         </TableRow>
       </TableBody>
-    </TableContent>
   </Table>
 );
 
 const DemoFilters = () => (
   <Table>
-    <TableToolbar>
-      <ToolbarLeft>
+    <Toolbar>
         <DropdownButton secondary>Filter</DropdownButton>
         <DropdownButton secondary>Filter two</DropdownButton>
-      </ToolbarLeft>
-    </TableToolbar>
-    <TableContent>
-      <TableHeader>
-        <TableHeaderCell sortable>Header</TableHeaderCell>
-        <TableHeaderCell sortable>Header</TableHeaderCell>
-        <TableHeaderCell sortable>Header</TableHeaderCell>
-        <TableHeaderCell sortable>Header</TableHeaderCell>
-      </TableHeader>
+    </Toolbar>
+      <HeaderRow>
+        <HeaderCell sortable>Header</HeaderCell>
+        <HeaderCell sortable>Header</HeaderCell>
+        <HeaderCell sortable>Header</HeaderCell>
+        <HeaderCell sortable>Header</HeaderCell>
+      </HeaderRow>
       <TableBody>
         <TableRow>
-          <TableCell>Content</TableCell>
-          <TableCell>Content</TableCell>
-          <TableCell>Content</TableCell>
-          <TableCell>Content</TableCell>
+          <ContentCell>Content</ContentCell>
+          <ContentCell>Content</ContentCell>
+          <ContentCell>Content</ContentCell>
+          <ContentCell>Content</ContentCell>
         </TableRow>
       </TableBody>
-    </TableContent>
   </Table>
 );
 
 const DemoInlineFilters = () => (
   <Table>
-    <TableContent>
-      <TableHeader>
-        <TableHeaderCell sortable searchable>
+      <HeaderRow>
+        <HeaderCell>
           Header
-        </TableHeaderCell>
-        <TableHeaderCell sortable searchable>
+          <HeaderSearchControl/>
+        </HeaderCell>
+        <HeaderCell>
           Header
-        </TableHeaderCell>
-        <TableHeaderCell sortable searchable>
+          <HeaderSearchControl/>
+        </HeaderCell>
+        <HeaderCell>
           Header
-        </TableHeaderCell>
-        <TableHeaderCell sortable searchable>
+          <HeaderSearchControl/>
+        </HeaderCell>
+        <HeaderCell >
           Header
-        </TableHeaderCell>
-      </TableHeader>
+          <HeaderSearchControl/>
+        </HeaderCell>
+      </HeaderRow>
       <TableBody>
         <TableRow>
-          <TableCell>Content</TableCell>
-          <TableCell>Content</TableCell>
-          <TableCell>Content</TableCell>
-          <TableCell>Content</TableCell>
+          <ContentCell>Content</ContentCell>
+          <ContentCell>Content</ContentCell>
+          <ContentCell>Content</ContentCell>
+          <ContentCell>Content</ContentCell>
         </TableRow>
       </TableBody>
-    </TableContent>
   </Table>
 );
 
 const DemoSearch = () => (
   <Table>
-    <TableToolbar>
-      <ToolbarLeft>
-        <Input placeholder="Search" dense />
-      </ToolbarLeft>
-    </TableToolbar>
-    <TableContent>
-      <TableHeader>
-        <TableHeaderCell sortable>Header</TableHeaderCell>
-        <TableHeaderCell sortable>Header</TableHeaderCell>
-        <TableHeaderCell sortable>Header</TableHeaderCell>
-        <TableHeaderCell sortable>Header</TableHeaderCell>
-      </TableHeader>
+    <Toolbar>
+        <Input placeholder="Search" dense  />
+    </Toolbar>
+      <HeaderRow>
+        <HeaderCell>Header</HeaderCell>
+        <HeaderCell>Header</HeaderCell>
+        <HeaderCell>Header</HeaderCell>
+        <HeaderCell>Header</HeaderCell>
+      </HeaderRow>
       <TableBody>
         <TableRow>
-          <TableCell>Content</TableCell>
-          <TableCell>Content</TableCell>
-          <TableCell>Content</TableCell>
-          <TableCell>Content</TableCell>
+          <ContentCell>Content</ContentCell>
+          <ContentCell>Content</ContentCell>
+          <ContentCell>Content</ContentCell>
+          <ContentCell>Content</ContentCell>
         </TableRow>
       </TableBody>
-    </TableContent>
   </Table>
 );
 
 const DemoTableActions = () => (
   <Table>
-    <TableToolbar>
-      <ToolbarRight>
+    <Toolbar>
         <Button secondary>Action</Button>
         <Button secondary>Action two</Button>
-      </ToolbarRight>
-    </TableToolbar>
-    <TableContent>
-      <TableHeader>
-        <TableHeaderCell sortable>Header</TableHeaderCell>
-        <TableHeaderCell sortable>Header</TableHeaderCell>
-        <TableHeaderCell sortable>Header</TableHeaderCell>
-        <TableHeaderCell sortable>Header</TableHeaderCell>
-      </TableHeader>
+    </Toolbar>
+      <HeaderRow>
+        <HeaderCell sortable>Header</HeaderCell>
+        <HeaderCell sortable>Header</HeaderCell>
+        <HeaderCell sortable>Header</HeaderCell>
+        <HeaderCell sortable>Header</HeaderCell>
+      </HeaderRow>
       <TableBody>
         <TableRow>
-          <TableCell>Content</TableCell>
-          <TableCell>Content</TableCell>
-          <TableCell>Content</TableCell>
-          <TableCell>Content</TableCell>
+          <ContentCell>Content</ContentCell>
+          <ContentCell>Content</ContentCell>
+          <ContentCell>Content</ContentCell>
+          <ContentCell>Content</ContentCell>
         </TableRow>
       </TableBody>
-    </TableContent>
   </Table>
 );
 
 const DemoDraggable = () => (
   <Table>
-    <TableContent>
-      <TableHeader draggable>
-        <TableHeaderCell sortable>Header</TableHeaderCell>
-        <TableHeaderCell sortable>Header</TableHeaderCell>
-        <TableHeaderCell sortable>Header</TableHeaderCell>
-        <TableHeaderCell sortable>Header</TableHeaderCell>
-      </TableHeader>
+      <HeaderRow>
+        <HeaderCell/>
+        <HeaderCell>Header</HeaderCell>
+        <HeaderCell>Header</HeaderCell>
+        <HeaderCell>Header</HeaderCell>
+        <HeaderCell>Header</HeaderCell>
+      </HeaderRow>
       <TableBody>
-        <TableRow draggable>
-          <TableCell>Content</TableCell>
-          <TableCell>Content</TableCell>
-          <TableCell>Content</TableCell>
-          <TableCell>Content</TableCell>
+        <TableRow>
+          <DragCell/>
+          <ContentCell>Content</ContentCell>
+          <ContentCell>Content</ContentCell>
+          <ContentCell>Content</ContentCell>
+          <ContentCell>Content</ContentCell>
         </TableRow>
-        <TableRow draggable>
-          <TableCell>Content</TableCell>
-          <TableCell>Content</TableCell>
-          <TableCell>Content</TableCell>
-          <TableCell>Content</TableCell>
+        <TableRow>
+          <DragCell/>
+          <ContentCell>Content</ContentCell>
+          <ContentCell>Content</ContentCell>
+          <ContentCell>Content</ContentCell>
+          <ContentCell>Content</ContentCell>
         </TableRow>
       </TableBody>
-    </TableContent>
   </Table>
 );
 
 const DemoSelectable = () => (
   <Table>
-    <TableContent>
-      <TableHeader selectable>
-        <TableHeaderCell>Header</TableHeaderCell>
-        <TableHeaderCell>Header</TableHeaderCell>
-        <TableHeaderCell>Header</TableHeaderCell>
-        <TableHeaderCell>Header</TableHeaderCell>
-      </TableHeader>
+      <HeaderRow>
+        <HeaderCell><Checkbox dense/></HeaderCell>
+        <HeaderCell>Header</HeaderCell>
+        <HeaderCell>Header</HeaderCell>
+        <HeaderCell>Header</HeaderCell>
+        <HeaderCell>Header</HeaderCell>
+      </HeaderRow>
       <TableBody>
-        <TableRow selectable>
-          <TableCell>Content</TableCell>
-          <TableCell>Content</TableCell>
-          <TableCell>Content</TableCell>
-          <TableCell>Content</TableCell>
+        <TableRow>
+          <SelectCell/>
+          <ContentCell>Content</ContentCell>
+          <ContentCell>Content</ContentCell>
+          <ContentCell>Content</ContentCell>
+          <ContentCell>Content</ContentCell>
         </TableRow>
-        <TableRow selectable>
-          <TableCell>Content</TableCell>
-          <TableCell>Content</TableCell>
-          <TableCell>Content</TableCell>
-          <TableCell>Content</TableCell>
+        <TableRow>
+          <SelectCell/>
+          <ContentCell>Content</ContentCell>
+          <ContentCell>Content</ContentCell>
+          <ContentCell>Content</ContentCell>
+          <ContentCell>Content</ContentCell>
         </TableRow>
       </TableBody>
-    </TableContent>
   </Table>
 );
 
 const DemoExpandable = () => (
   <Table>
-    <TableContent>
-      <TableHeader expandable>
-        <TableHeaderCell>Header</TableHeaderCell>
-        <TableHeaderCell>Header</TableHeaderCell>
-        <TableHeaderCell>Header</TableHeaderCell>
-        <TableHeaderCell>Header</TableHeaderCell>
-      </TableHeader>
+      <HeaderRow>
+        <HeaderCell/>
+        <HeaderCell>Header</HeaderCell>
+        <HeaderCell>Header</HeaderCell>
+        <HeaderCell>Header</HeaderCell>
+        <HeaderCell>Header</HeaderCell>
+      </HeaderRow>
       <TableBody>
-        <TableRow expandable>
-          <TableCell>Content</TableCell>
-          <TableCell>Content</TableCell>
-          <TableCell>Content</TableCell>
-          <TableCell>Content</TableCell>
+        <TableRow>
+          <ExpandCell/>
+          <ContentCell>Content</ContentCell>
+          <ContentCell>Content</ContentCell>
+          <ContentCell>Content</ContentCell>
+          <ContentCell>Content</ContentCell>
         </TableRow>
-        <TableRow expandable>
-          <TableCell>Content</TableCell>
-          <TableCell>Content</TableCell>
-          <TableCell>Content</TableCell>
-          <TableCell>Content</TableCell>
+        <TableRow>
+          <ExpandCell/>
+          <ContentCell>Content</ContentCell>
+          <ContentCell>Content</ContentCell>
+          <ContentCell>Content</ContentCell>
+          <ContentCell>Content</ContentCell>
         </TableRow>
       </TableBody>
-    </TableContent>
   </Table>
 );
 
 const DemoBordered = () => (
   <Table bordered>
-    <TableContent>
-      <TableHeader>
-        <TableHeaderCell>Header</TableHeaderCell>
-        <TableHeaderCell>Header</TableHeaderCell>
-        <TableHeaderCell>Header</TableHeaderCell>
-        <TableHeaderCell>Header</TableHeaderCell>
-      </TableHeader>
+      <HeaderRow>
+        <HeaderCell>Header</HeaderCell>
+        <HeaderCell>Header</HeaderCell>
+        <HeaderCell>Header</HeaderCell>
+        <HeaderCell>Header</HeaderCell>
+      </HeaderRow>
       <TableBody>
         <TableRow>
-          <TableCell>Content</TableCell>
-          <TableCell>Content</TableCell>
-          <TableCell>Content</TableCell>
-          <TableCell>Content</TableCell>
+          <ContentCell>Content</ContentCell>
+          <ContentCell>Content</ContentCell>
+          <ContentCell>Content</ContentCell>
+          <ContentCell>Content</ContentCell>
         </TableRow>
         <TableRow>
-          <TableCell>Content</TableCell>
-          <TableCell>Content</TableCell>
-          <TableCell>Content</TableCell>
-          <TableCell>Content</TableCell>
+          <ContentCell>Content</ContentCell>
+          <ContentCell>Content</ContentCell>
+          <ContentCell>Content</ContentCell>
+          <ContentCell>Content</ContentCell>
         </TableRow>
       </TableBody>
-    </TableContent>
   </Table>
 );
 
 const DemoFooter = () => (
   <Table>
-    <TableContent>
-      <TableHeader>
-        <TableHeaderCell>Header</TableHeaderCell>
-        <TableHeaderCell>Header</TableHeaderCell>
-        <TableHeaderCell>Header</TableHeaderCell>
-        <TableHeaderCell>Header</TableHeaderCell>
-      </TableHeader>
+      <HeaderRow>
+        <HeaderCell>Header</HeaderCell>
+        <HeaderCell>Header</HeaderCell>
+        <HeaderCell>Header</HeaderCell>
+        <HeaderCell>Header</HeaderCell>
+      </HeaderRow>
       <TableBody>
         <TableRow>
-          <TableCell>Content</TableCell>
-          <TableCell>Content</TableCell>
-          <TableCell>Content</TableCell>
-          <TableCell>Content</TableCell>
+          <ContentCell>Content</ContentCell>
+          <ContentCell>Content</ContentCell>
+          <ContentCell>Content</ContentCell>
+          <ContentCell>Content</ContentCell>
         </TableRow>
       </TableBody>
-    </TableContent>
     <TableFooter>Footer content</TableFooter>
   </Table>
 );
 
 const DemoInlineEdit = () => (
   <Table>
-    <TableContent>
-      <TableHeader>
-        <TableHeaderCell>Header</TableHeaderCell>
-        <TableHeaderCell>Header</TableHeaderCell>
-        <TableHeaderCell>Header</TableHeaderCell>
-        <TableHeaderCell>Header</TableHeaderCell>
-      </TableHeader>
+      <HeaderRow>
+        <HeaderCell>Header</HeaderCell>
+        <HeaderCell>Header</HeaderCell>
+        <HeaderCell>Header</HeaderCell>
+        <HeaderCell>Header</HeaderCell>
+      </HeaderRow>
       <TableBody>
         <TableRow>
-          <TableCell editable>Content</TableCell>
-          <TableCell>Content</TableCell>
-          <TableCell editable>Content</TableCell>
-          <TableCell>Content</TableCell>
+          <ContentCell editable>Content</ContentCell>
+          <ContentCell>Content</ContentCell>
+          <ContentCell editable>Content</ContentCell>
+          <ContentCell>Content</ContentCell>
         </TableRow>
       </TableBody>
-    </TableContent>
   </Table>
 );
 
 const DemoLarge = () => (
   <Table large>
-    <TableContent>
-      <TableHeader>
-        <TableHeaderCell>Header</TableHeaderCell>
-        <TableHeaderCell>Header</TableHeaderCell>
-        <TableHeaderCell>Header</TableHeaderCell>
-        <TableHeaderCell>Header</TableHeaderCell>
-      </TableHeader>
+      <HeaderRow>
+        <HeaderCell>Header</HeaderCell>
+        <HeaderCell>Header</HeaderCell>
+        <HeaderCell>Header</HeaderCell>
+        <HeaderCell>Header</HeaderCell>
+      </HeaderRow>
       <TableBody>
         <TableRow>
-          <TableCell>Content</TableCell>
-          <TableCell>Content</TableCell>
-          <TableCell>Content</TableCell>
-          <TableCell>Content</TableCell>
+          <ContentCell>Content</ContentCell>
+          <ContentCell>Content</ContentCell>
+          <ContentCell>Content</ContentCell>
+          <ContentCell>Content</ContentCell>
         </TableRow>
         <TableRow>
-          <TableCell>Content</TableCell>
-          <TableCell>Content</TableCell>
-          <TableCell>Content</TableCell>
-          <TableCell>Content</TableCell>
+          <ContentCell>Content</ContentCell>
+          <ContentCell>Content</ContentCell>
+          <ContentCell>Content</ContentCell>
+          <ContentCell>Content</ContentCell>
         </TableRow>
       </TableBody>
-    </TableContent>
   </Table>
 );
 
 const DemoEmpty = () => (
   <Table>
-    <TableContent>
-      <TableHeader>
-        <TableHeaderCell />
-      </TableHeader>
+      <HeaderRow>
+        <HeaderCell />
+      </HeaderRow>
       <TableBody>
         <TableRow empty></TableRow>
       </TableBody>
-    </TableContent>
   </Table>
 );
 
 const DemoKitchenSink = () => (
-  <Table title="Table title">
-    <TableToolbar>
-      <ToolbarLeft>
+  <Table>
+    <Toolbar>
+        Title
         <Input dense placeholder="Search" />
         <DropdownButton secondary>Filter attribute</DropdownButton>
-      </ToolbarLeft>
-      <ToolbarRight>
         <Button secondary>Action</Button>
         <Button secondary>Action two</Button>
-      </ToolbarRight>
-    </TableToolbar>
-    <TableContent>
-      <TableHeader draggable expandable selectable>
-        <TableHeaderCell sortable>Header</TableHeaderCell>
-        <TableHeaderCell sortable>Header</TableHeaderCell>
-        <TableHeaderCell sortable>Header</TableHeaderCell>
-        <TableHeaderCell sortable>Header</TableHeaderCell>
-        <TableHeaderCell right>Actions</TableHeaderCell>
-      </TableHeader>
+    </Toolbar>
+      <HeaderRow>
+        <HeaderCell/>
+        <HeaderCell/>
+        <HeaderCell><Checkbox dense/></HeaderCell>
+        <HeaderCell sortable>Header</HeaderCell>
+        <HeaderCell sortable>Header</HeaderCell>
+        <HeaderCell sortable>Header</HeaderCell>
+        <HeaderCell sortable>Header</HeaderCell>
+        <HeaderCell right>Actions</HeaderCell>
+      </HeaderRow>
       <TableBody>
-        <TableRow draggable expandable selectable>
-          <TableCell editable>Content</TableCell>
-          <TableCell muted>Content</TableCell>
-          <TableCell valid>Content</TableCell>
-          <TableCell error>Content</TableCell>
-          <TableCell right>
+        <TableRow>
+          <DragCell/>
+          <ExpandCell/>
+          <SelectCell/>
+          <ContentCell editable>Content</ContentCell>
+          <ContentCell muted>Content</ContentCell>
+          <ContentCell valid>Content</ContentCell>
+          <ContentCell error>Content</ContentCell>
+          <ContentCell right>
             <TableActionStrip>
               <CellAction>Action one</CellAction>
               <CellAction>Action two</CellAction>
             </TableActionStrip>
-          </TableCell>
+          </ContentCell>
         </TableRow>
       </TableBody>
-    </TableContent>
     <TableFooter>Table footer</TableFooter>
   </Table>
 );

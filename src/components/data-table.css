@@ -148,10 +148,9 @@ td.content-error {
 
 .table-toolbar {
   padding: 12px;
+  text-align:left;
   border: 1px solid var(--colors-grey300);
   border-bottom: none;
-  display: flex;
-  justify-content: space-between;
 }
 
 .toolbar-left,
@@ -194,7 +193,6 @@ td.cell-expand-control {
 
 .table-footer {
   padding: 12px;
-  border: 1px solid var(--colors-grey300);
   border-top: none;
 }
 .table-footer span {
