@@ -1,19 +1,9 @@
-#demo-empty {
-  width: 600px;
-}
-
-.table-wrap {
-  /* display: table; */
-}
-
 table.data-table {
   border: 1px solid var(--colors-grey300);
   border-collapse: collapse;
   width: 100%;
-}
-
-table.data-table {
   font-size: 14px;
+  color: var(--colors-grey900);
 }
 
 th {
@@ -24,16 +14,6 @@ th {
   color: var(--colors-grey800);
   font-weight: normal;
   background-color: var(--colors-grey200);
-}
-
-thead th.header-sortable {
-  cursor: pointer;
-}
-thead th.header-sortable:hover {
-  background-color: var(--colors-grey300);
-}
-thead th.header-sortable:active {
-  background-color: var(--colors-grey400);
 }
 
 .header-content-wrap {
@@ -71,10 +51,6 @@ th.header-right {
   text-align: right;
 }
 
-th.header-leading-icon {
-  padding-right: 0;
-}
-
 tbody tr {
   height: 45px;
   background-color: white;
@@ -97,76 +73,45 @@ td.cell-default {
   text-align: left;
 }
 
-td.cell-right {
+td.right {
   text-align: right;
 }
 
-td.content-default {
-  color: var(--colors-grey900);
-}
-
-td.content-muted {
+td.muted {
   color: var(--colors-grey700);
   font-style: italic;
 }
 
-td.content-valid {
+td.valid {
   color: var(--colors-green700);
 }
 
-td.content-error {
+td.error {
   color: var(--colors-red700);
 }
 
-.cell-action-strip a.cell-action {
+a.link {
   height: 100%;
   text-decoration: none;
   color: var(--colors-blue700);
   vertical-align: middle;
   word-break: keep-all;
 }
-.cell-action-strip a.cell-action:hover {
+a.link:hover {
   text-decoration: underline;
 }
-.cell-action-strip a.cell-action + a.cell-action {
+a.link + a.link {
   margin-left: 16px;
-}
-.cell-action-strip .more-dots:hover {
-  cursor: pointer;
-}
-
-.table-title {
-  padding: 12px;
-  border: 1px solid var(--colors-grey300);
-  border-bottom: none;
-}
-.table-title span {
-  font-size: 16px;
-  line-height: 20px;
-  color: var(--colors-grey800);
 }
 
 .table-toolbar {
   padding: 12px;
-  text-align:left;
+  text-align: left;
   border: 1px solid var(--colors-grey300);
   border-bottom: none;
 }
 
-.toolbar-left,
-.toolbar-right {
-  display: flex;
-}
-
-.toolbar-left button {
-  margin-right: 8px;
-}
-
-.toolbar-right {
-  margin-left: auto;
-}
-
-.toolbar-right button {
+.action-wrap button {
   margin-left: 8px;
 }
 
@@ -187,61 +132,15 @@ td.cell-expand-control {
   cursor: pointer;
 }
 
-.bordered td {
+.bordered tbody td {
   border: 1px solid var(--colors-grey300);
 }
 
-.table-footer {
-  padding: 12px;
-  border-top: none;
-}
-.table-footer span {
-  font-size: 16px;
-  line-height: 20px;
-  color: var(--colors-grey800);
-}
-
-td.cell-editable:hover {
+td.editable:hover {
   background-color: var(--colors-blue100) !important;
   cursor: pointer;
 }
 
-td.cell-editable:after {
-  content: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='16px' height='16px' viewBox='0 0 16 16' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3Eedit%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='edit' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cpath d='M1,11.8875 L1,15.0075 L4.12,15.0075 L13,6.1275 L9.88,3.0075 L1,11.8875 Z M15.76,3.3775 C16.09,3.0475 16.09,2.5275 15.76,2.1975 L13.81,0.2475 C13.48,-0.0825 12.96,-0.0825 12.63,0.2475 L11,1.8875 L14.12,5.0075 L15.76,3.3775 L15.76,3.3775 Z' id='pencil' fill='%236E7A8A' fill-rule='nonzero'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
-  margin-left: 8px;
-}
-
-.large-cells table tbody tr {
+.large tbody tr {
   height: 60px;
-}
-
-.badge {
-  font-size: 13px;
-  line-height: 15px;
-  padding: 4px 6px;
-  background-color: var(--colors-grey300);
-  border-radius: 4px;
-  color: var(--colors-grey900);
-}
-
-.badge-neutral {
-  background-color: var(--colors-blue100);
-  color: var(--colors-blue900);
-}
-
-.badge-valid {
-  background-color: var(--colors-green100);
-  color: var(--colors-green900);
-}
-
-.badge-error {
-  background-color: var(--colors-red100);
-  color: var(--colors-red900);
-}
-
-td.cell-empty {
-  font-size: 14px;
-  line-height: 16px;
-  color: var(--colors-grey700);
-  text-align: center;
 }
