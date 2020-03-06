@@ -6,7 +6,6 @@ import SpecRichText from "./components/richText.js";
 import SpecTag from "./components/tag.js";
 import SpecDataTable from "./components/data-table.js";
 import SpecColorPicker from "./components/color-picker.js";
-import { StateExp } from "./components/state.js";
 import "./App.css";
 
 export default function App() {
