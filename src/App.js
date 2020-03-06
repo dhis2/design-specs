@@ -39,10 +39,6 @@ export default function App() {
               <BackLink />
               <SpecColorPicker />
             </Route>
-            <Route path="/state">
-              <BackLink />
-              <StateExp />
-            </Route>
             <Route path="/">
               <Home />
             </Route>
@@ -72,9 +68,6 @@ function Home() {
         </li>
         <li>
           <Link to="/color-picker">Color Picker</Link>
-        </li>
-        <li>
-          <Link to="/state">State</Link>
         </li>
       </ul>
       Other examples/mockups
