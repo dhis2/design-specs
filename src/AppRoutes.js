@@ -6,7 +6,6 @@ import SpecRichText from "./components/richText.js";
 import SpecTag from "./components/tag.js";
 import SpecDataTable from "./components/data-table.js";
 import SpecColorPicker from "./components/color-picker.js";
-import { StateExp } from "./components/state.js";
 
 const BackLink = () => (
   <div class="back-link">
@@ -34,8 +33,7 @@ const rawComponents = [
   { url: "/rich-text", component: SpecRichText },
   { url: "/tag", component: SpecTag },
   { url: "/data-table", component: SpecDataTable },
-  { url: "/color-picker", component: SpecColorPicker },
-  { url: "/state", component: StateExp }
+  { url: "/color-picker", component: SpecColorPicker }
 ];
 
 export const componentRoutes = rawComponents.map(object =>
@@ -61,9 +59,6 @@ function Home() {
         </li>
         <li>
           <Link to="/color-picker">Color Picker</Link>
-        </li>
-        <li>
-          <Link to="/state">State</Link>
         </li>
       </ul>
       Other examples/mockups
