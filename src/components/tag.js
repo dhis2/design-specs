@@ -1,23 +1,23 @@
-import React from "react";
-import "./tag.css";
+import React from 'react';
+import './tag.css';
 
-import {} from "@dhis2/ui-core";
+import {} from '@dhis2/ui-core';
 
-import { DevExample } from "../assets/DevExample.js";
-import { Monitoring } from "./tagIcons.js";
+import { DevExample } from '../assets/DevExample.js';
+import { Monitoring } from './tagIcons.js';
 
-const Tag = props => (
+const Tag = (props) => (
   <div
     className={`
 tag
-${"negative" in props && " negative"}
-${"valid" in props && " valid"}
-${"neutral" in props && " neutral"}
-${"bold" in props && " bold"}
+${'negative' in props && ' negative'}
+${'valid' in props && ' valid'}
+${'neutral' in props && ' neutral'}
+${'bold' in props && ' bold'}
 `}
   >
     <div class="tag-content">
-      {"icon" in props && <div class="tag-icon">{props.icon}</div>}
+      {'icon' in props && <div class="tag-icon">{props.icon}</div>}
       {props.children}
     </div>
   </div>

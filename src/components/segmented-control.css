@@ -1,0 +1,55 @@
+.segmented-control {
+  display: flex;
+}
+
+.segment {
+  font-size: 14px;
+  color: var(--colors-grey600);
+  min-width: 72px;
+  max-width: 320px;
+  padding: 8px 16px;
+  background: var(--colors-grey050);
+  text-align: center;
+  border: 1px solid var(--colors-grey400);
+  border-right: 0px;
+}
+
+.segment:hover {
+  cursor: pointer;
+  background: var(--colors-grey100);
+  color: var(--colors-grey700);
+}
+
+.segment:first-of-type {
+  border-radius: 3px 0 0 3px;
+}
+
+.segment:last-of-type {
+  border-radius: 0 3px 3px 0;
+  border-right: 1px solid var(--colors-grey400);
+}
+
+.selected-segment {
+  background: var(--colors-teal600);
+  border: 1px solid var(--colors-teal800);
+  color: white;
+  font-weight: 600;
+}
+
+.selected-segment:last-of-type {
+  border-right: 1px solid var(--colors-teal800);
+}
+
+.selected-segment:hover {
+  cursor: default;
+  background: var(--colors-teal600);
+  color: white;
+}
+
+.disabled-segment {
+  opacity: 0.5;
+}
+
+.disabled-segment:hover {
+  cursor: not-allowed;
+}

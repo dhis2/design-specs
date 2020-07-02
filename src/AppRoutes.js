@@ -6,8 +6,8 @@ import SpecRichText from './components/richText.js';
 import SpecTag from './components/tag.js';
 import SpecDataTable from './components/data-table.js';
 import SpecColorPicker from './components/color-picker.js';
-import SpecOUtree from './components/ouTree.js';
 import SpecOUTree from './components/ouTree.js';
+import SpecSegmentedControl from './components/segmented-control.js';
 
 const BackLink = () => (
   <div class="back-link">
@@ -37,6 +37,7 @@ const rawComponents = [
   { url: '/data-table', component: SpecDataTable },
   { url: '/color-picker', component: SpecColorPicker },
   { url: '/org-unit-tree', component: SpecOUTree },
+  { url: '/segmented-control', component: SpecSegmentedControl },
 ];
 
 export const componentRoutes = rawComponents.map((object) =>
@@ -65,6 +66,9 @@ function Home() {
         </li>
         <li>
           <Link to="/org-unit-tree">Org unit tree</Link>
+        </li>
+        <li>
+          <Link to="/segmented-control">Segmented Control</Link>
         </li>
       </ul>
       Other examples/mockups
