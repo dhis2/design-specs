@@ -1,11 +1,13 @@
-import React from "react";
-import { Route, Link } from "react-router-dom";
+import React from 'react';
+import { Route, Link } from 'react-router-dom';
 
-import SpecComment from "./components/comment.js";
-import SpecRichText from "./components/richText.js";
-import SpecTag from "./components/tag.js";
-import SpecDataTable from "./components/data-table.js";
-import SpecColorPicker from "./components/color-picker.js";
+import SpecComment from './components/comment.js';
+import SpecRichText from './components/richText.js';
+import SpecTag from './components/tag.js';
+import SpecDataTable from './components/data-table.js';
+import SpecColorPicker from './components/color-picker.js';
+import SpecOUtree from './components/ouTree.js';
+import SpecOUTree from './components/ouTree.js';
 
 const BackLink = () => (
   <div class="back-link">
@@ -16,7 +18,7 @@ const BackLink = () => (
 export const appRoutes = [
   <Route path="/">
     <Home />
-  </Route>
+  </Route>,
 ];
 
 function buildRoute(path, Component) {
@@ -29,14 +31,15 @@ function buildRoute(path, Component) {
 }
 
 const rawComponents = [
-  { url: "/comment", component: SpecComment },
-  { url: "/rich-text", component: SpecRichText },
-  { url: "/tag", component: SpecTag },
-  { url: "/data-table", component: SpecDataTable },
-  { url: "/color-picker", component: SpecColorPicker }
+  { url: '/comment', component: SpecComment },
+  { url: '/rich-text', component: SpecRichText },
+  { url: '/tag', component: SpecTag },
+  { url: '/data-table', component: SpecDataTable },
+  { url: '/color-picker', component: SpecColorPicker },
+  { url: '/org-unit-tree', component: SpecOUTree },
 ];
 
-export const componentRoutes = rawComponents.map(object =>
+export const componentRoutes = rawComponents.map((object) =>
   buildRoute(object.url, object.component)
 );
 
@@ -59,6 +62,9 @@ function Home() {
         </li>
         <li>
           <Link to="/color-picker">Color Picker</Link>
+        </li>
+        <li>
+          <Link to="/org-unit-tree">Org unit tree</Link>
         </li>
       </ul>
       Other examples/mockups
