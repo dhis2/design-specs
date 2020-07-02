@@ -1,0 +1,146 @@
+table.data-table {
+  border: 1px solid var(--colors-grey300);
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 14px;
+  color: var(--colors-grey900);
+}
+
+th {
+  text-align: left;
+  padding: 0 12px;
+  height: 36px;
+  font-size: 13px;
+  color: var(--colors-grey800);
+  font-weight: normal;
+  background-color: var(--colors-grey200);
+}
+
+.header-content-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.header-right .header-content-wrap {
+  justify-content: flex-end;
+}
+
+.header-action-wrap {
+  background: transparent;
+  width: 24px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.header-action-wrap:hover {
+  background: var(--colors-grey400);
+  cursor: pointer;
+}
+
+.header-search-wrap {
+  margin-bottom: var(--spacers-dp4);
+}
+
+th.header-default {
+  text-align: left;
+}
+
+th.header-right {
+  text-align: right;
+}
+
+tbody tr {
+  height: 45px;
+  background-color: white;
+}
+tbody tr:hover {
+  background-color: var(--colors-blue050);
+}
+tbody tr:active {
+  background-color: var(--colors-blue100);
+}
+
+tbody td {
+  padding: 0 12px;
+  border-bottom: 1px solid var(--colors-grey300);
+  font-size: 14px;
+  line-height: 16px;
+}
+
+td.cell-default {
+  text-align: left;
+}
+
+td.right {
+  text-align: right;
+}
+
+td.muted {
+  color: var(--colors-grey700);
+  font-style: italic;
+}
+
+td.valid {
+  color: var(--colors-green700);
+}
+
+td.error {
+  color: var(--colors-red700);
+}
+
+a.link {
+  height: 100%;
+  text-decoration: none;
+  color: var(--colors-blue700);
+  vertical-align: middle;
+  word-break: keep-all;
+}
+a.link:hover {
+  text-decoration: underline;
+}
+a.link + a.link {
+  margin-left: 16px;
+}
+
+.table-toolbar {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid var(--colors-grey300);
+  border-bottom: none;
+}
+
+.action-wrap button {
+  margin-left: 8px;
+}
+
+td.cell-leading-icon {
+  padding-right: 0;
+  white-space: nowrap;
+}
+
+td.cell-drag-handle:hover {
+  cursor: move;
+}
+
+tr.row-checked {
+  background-color: var(--colors-teal050);
+}
+
+td.cell-expand-control {
+  cursor: pointer;
+}
+
+.bordered tbody td {
+  border: 1px solid var(--colors-grey300);
+}
+
+td.editable:hover {
+  background-color: var(--colors-blue100) !important;
+  cursor: pointer;
+}
+
+.large tbody tr {
+  height: 60px;
+}
