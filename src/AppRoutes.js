@@ -8,6 +8,7 @@ import SpecDataTable from './components/data-table.js';
 import SpecColorPicker from './components/color-picker.js';
 import SpecOUTree from './components/ouTree.js';
 import SpecSegmentedControl from './components/segmented-control.js';
+import SpecTypeSelector from './components/type-selector.js';
 
 const BackLink = () => (
   <div class="back-link">
@@ -38,6 +39,7 @@ const rawComponents = [
   { url: '/color-picker', component: SpecColorPicker },
   { url: '/org-unit-tree', component: SpecOUTree },
   { url: '/segmented-control', component: SpecSegmentedControl },
+  { url: '/type-selector', component: SpecTypeSelector },
 ];
 
 export const componentRoutes = rawComponents.map((object) =>
@@ -75,6 +77,9 @@ function Home() {
       <ul>
         <li>
           <Link to="/dv-start-screen">Data Visualizer: Start Screen</Link>
+        </li>
+        <li>
+          <Link to="/type-selector">Data Visualizer: Type Selector</Link>
         </li>
       </ul>
     </nav>
