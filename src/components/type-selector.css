@@ -64,8 +64,9 @@
 }
 
 /* divider */
-.divider {
+.visType-divider {
   display: block;
   width: 100%;
-  border-bottom: 1px solid grey300;
+  border-bottom: 1px solid var(--colors-grey300);
+  margin: 4px 0 12px 0;
 }

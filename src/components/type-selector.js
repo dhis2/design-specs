@@ -21,7 +21,7 @@ const VisType = (props) => (
   </div>
 );
 
-const Divider = () => <div class="divider"></div>;
+const Divider = () => <div class="visType-divider"></div>;
 
 export default function SpecTypeSelector() {
   return (
