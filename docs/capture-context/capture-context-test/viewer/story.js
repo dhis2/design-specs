@@ -900,36 +900,25 @@ overlayClosePrevOverlay:false,
 	},
 	{
 		"rect": {
-			"x": 780,
+			"x": 679,
+			"y": 54,
+			"width": 45,
+			"height": 28
+		},
+		"isParentFixed": false,
+		"page": 6,
+		"index": 2
+	},
+	{
+		"rect": {
+			"x": 736,
 			"y": 60,
 			"width": 93,
 			"height": 15
 		},
 		"isParentFixed": false,
 		"page": 0,
-		"index": 2
-	},
-	{
-		"rect": {
-			"x": 625,
-			"y": 54,
-			"width": 66,
-			"height": 28
-		},
-		"isParentFixed": false,
-		"page": 16,
 		"index": 3
-	},
-	{
-		"rect": {
-			"x": 699,
-			"y": 54,
-			"width": 65,
-			"height": 28
-		},
-		"isParentFixed": false,
-		"page": 12,
-		"index": 4
 	},
 	{
 		"rect": {
@@ -940,7 +929,7 @@ overlayClosePrevOverlay:false,
 		},
 		"isParentFixed": false,
 		"page": 14,
-		"index": 5
+		"index": 4
 	}
 ],
 })
