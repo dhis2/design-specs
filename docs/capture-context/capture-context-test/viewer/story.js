@@ -360,7 +360,7 @@ overlayClosePrevOverlay:false,
 'links' : [
 	{
 		"rect": {
-			"x": 541,
+			"x": 581,
 			"y": 60,
 			"width": 93,
 			"height": 15
@@ -371,6 +371,28 @@ overlayClosePrevOverlay:false,
 	},
 	{
 		"rect": {
+			"x": 426,
+			"y": 54,
+			"width": 66,
+			"height": 28
+		},
+		"isParentFixed": false,
+		"page": 10,
+		"index": 1
+	},
+	{
+		"rect": {
+			"x": 500,
+			"y": 54,
+			"width": 65,
+			"height": 28
+		},
+		"isParentFixed": false,
+		"page": 12,
+		"index": 2
+	},
+	{
+		"rect": {
 			"x": 217,
 			"y": 48,
 			"width": 197,
@@ -378,7 +400,7 @@ overlayClosePrevOverlay:false,
 		},
 		"isParentFixed": false,
 		"page": 4,
-		"index": 1
+		"index": 3
 	}
 ],
 })
