@@ -63,11 +63,14 @@ class GalleryViewer extends AbstractViewer {
         $('#searchInput').focus()
 
         super._showSelf()
+
+        viewer.refresh_url(viewer.currentPage, "", false)
     }
 
     _hideSelf() {
         $('#gallery-modal').addClass('hidden');
         super._hideSelf()
+        viewer.refresh_url(viewer.currentPage, "", false)
     }
 
 
@@ -84,7 +87,7 @@ class GalleryViewer extends AbstractViewer {
     }
 
     loadOnePage(page) {
-        var imageURI = story.hasRetina && viewer.isHighDensityDisplay() ? page.image2x : page.image;
+        var imageURI = page.image
 
         var div = $('<div/>', {
             id: page.index,
@@ -114,7 +117,7 @@ class GalleryViewer extends AbstractViewer {
         divWrapper.appendTo(div);
 
         var divTitle = $('<div/>', {
-          class: "div-page-title"
+            class: "div-page-title"
         });
 
         var title = $('<span/>', {
@@ -122,7 +125,7 @@ class GalleryViewer extends AbstractViewer {
             alt: page.title,
             text: page.title,
         });
-        
+
         title.appendTo(divTitle);
         divTitle.appendTo(divMain);
     }
