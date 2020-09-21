@@ -1808,6 +1808,17 @@ overlayClosePrevOverlay:false,
 	},
 	{
 		"rect": {
+			"x": 625,
+			"y": 54,
+			"width": 46,
+			"height": 28
+		},
+		"isParentFixed": false,
+		"page": 11,
+		"index": 2
+	},
+	{
+		"rect": {
 			"x": 679,
 			"y": 54,
 			"width": 45,
@@ -1815,7 +1826,7 @@ overlayClosePrevOverlay:false,
 		},
 		"isParentFixed": false,
 		"page": 4,
-		"index": 2
+		"index": 3
 	},
 	{
 		"rect": {
@@ -1826,7 +1837,7 @@ overlayClosePrevOverlay:false,
 		},
 		"isParentFixed": false,
 		"page": 0,
-		"index": 3
+		"index": 4
 	},
 	{
 		"rect": {
@@ -1837,7 +1848,7 @@ overlayClosePrevOverlay:false,
 		},
 		"isParentFixed": false,
 		"page": 26,
-		"index": 4
+		"index": 5
 	}
 ],
 })
