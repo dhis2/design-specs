@@ -2281,7 +2281,7 @@ overlayClosePrevOverlay:false,
 "image": "menu_new_tei.png",
 "image2x": "menu_new_tei@2x.png",
 "width": 346,
-"height": 124,
+"height": 156,
 "title": "menu-new-TEI",
 'transAnimType': 0,
 'layout' : {
@@ -2305,12 +2305,34 @@ overlayClosePrevOverlay:false,
 		"rect": {
 			"x": 4,
 			"y": 47,
-			"width": 180,
+			"width": 338,
 			"height": 32
 		},
 		"isParentFixed": false,
 		"page": 34,
 		"index": 0
+	},
+	{
+		"rect": {
+			"x": 4,
+			"y": 79,
+			"width": 338,
+			"height": 32
+		},
+		"isParentFixed": false,
+		"page": 16,
+		"index": 1
+	},
+	{
+		"rect": {
+			"x": 4,
+			"y": 111,
+			"width": 338,
+			"height": 32
+		},
+		"isParentFixed": false,
+		"page": 15,
+		"index": 2
 	}
 ],
 })
