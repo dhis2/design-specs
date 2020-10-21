@@ -8,7 +8,7 @@ let search = document.getElementById('search');
 
 // keyboard shortcut to focus search
 document.addEventListener('keydown', function (event) {
-  if (event.code == 'Slash') {
+  if (event.code === 'Slash') {
     event.preventDefault();
     search.focus();
     search.select();
@@ -33,7 +33,6 @@ search.addEventListener('keyup', function (event) {
     }
   }
   if (count === 0) {
-    console.log(warning);
     warning.style.display = 'block';
   }
 });
