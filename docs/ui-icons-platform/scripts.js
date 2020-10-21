@@ -58,6 +58,7 @@ function build() {
   //loop the source
   for (i = 0; i < sourceIcons.length; i++) {
     let icon = proto.cloneNode(true);
+    icon.removeAttribute('id');
     //set values
     name = sourceIcons[i].name;
     slug = sourceIcons[i].slug;
@@ -91,8 +92,8 @@ const sourceIcons = [
   {
     name: 'Apps',
     slug: 'Apps',
-    path16: 'icons/Apps/16.svg',
-    path24: 'icons/Apps/24.svg',
+    path16: 'icons/apps/16.svg',
+    path24: 'icons/apps/24.svg',
   },
   {
     name: 'Copy',
@@ -103,97 +104,97 @@ const sourceIcons = [
   {
     name: 'Download',
     slug: 'Download',
-    path16: 'icons/Download/16.svg',
-    path24: 'icons/Download/24.svg',
+    path16: 'icons/download/16.svg',
+    path24: 'icons/download/24.svg',
   },
   {
     name: 'Drag handle',
     slug: 'DragHandle',
-    path16: 'icons/Drag-handle/16.svg',
-    path24: 'icons/Drag-handle/24.svg',
+    path16: 'icons/drag-handle/16.svg',
+    path24: 'icons/drag-handle/24.svg',
   },
   {
     name: 'Duplicate',
     slug: 'Duplicate',
-    path16: 'icons/Duplicate/16.svg',
-    path24: 'icons/Duplicate/24.svg',
+    path16: 'icons/duplicate/16.svg',
+    path24: 'icons/duplicate/24.svg',
   },
   {
     name: 'Edit',
     slug: 'Edit',
-    path16: 'icons/Edit/16.svg',
-    path24: 'icons/Edit/24.svg',
+    path16: 'icons/edit/16.svg',
+    path24: 'icons/edit/24.svg',
   },
   {
     name: 'Error',
     slug: 'Error',
-    path16: 'icons/Error/16.svg',
-    path24: 'icons/Error/24.svg',
+    path16: 'icons/error/16.svg',
+    path24: 'icons/error/24.svg',
   },
   {
     name: 'Flag',
     slug: 'Flag',
-    path16: 'icons/Flag/16.svg',
-    path24: 'icons/Flag/24.svg',
+    path16: 'icons/flag/16.svg',
+    path24: 'icons/flag/24.svg',
   },
   {
     name: 'Fullscreen',
     slug: 'Fullscreen',
-    path16: 'icons/Fullscreen/16.svg',
-    path24: 'icons/Fullscreen/24.svg',
+    path16: 'icons/fullscreen/16.svg',
+    path24: 'icons/fullscreen/24.svg',
   },
   {
     name: 'Link',
     slug: 'Link',
-    path16: 'icons/Link/16.svg',
-    path24: 'icons/Link/24.svg',
+    path16: 'icons/link/16.svg',
+    path24: 'icons/link/24.svg',
   },
   {
     name: 'Mail',
     slug: 'Mail',
-    path16: 'icons/Mail/16.svg',
-    path24: 'icons/Mail/24.svg',
+    path16: 'icons/mail/16.svg',
+    path24: 'icons/mail/24.svg',
   },
   {
     name: 'Queue',
     slug: 'Queue',
-    path16: 'icons/Queue/16.svg',
-    path24: 'icons/Queue/24.svg',
+    path16: 'icons/queue/16.svg',
+    path24: 'icons/queue/24.svg',
   },
   {
     name: 'Search',
     slug: 'Search',
-    path16: 'icons/Search/16.svg',
-    path24: 'icons/Search/24.svg',
+    path16: 'icons/search/16.svg',
+    path24: 'icons/search/24.svg',
   },
   {
     name: 'Sync',
     slug: 'Sync',
-    path16: 'icons/Sync/16.svg',
-    path24: 'icons/Sync/24.svg',
+    path16: 'icons/sync/16.svg',
+    path24: 'icons/sync/24.svg',
   },
   {
     name: 'Table',
     slug: 'Table',
-    path16: 'icons/Table/16.svg',
-    path24: 'icons/Table/24.svg',
+    path16: 'icons/table/16.svg',
+    path24: 'icons/table/24.svg',
   },
   {
     name: 'User',
     slug: 'User',
-    path16: 'icons/User/16.svg',
-    path24: 'icons/User/24.svg',
+    path16: 'icons/user/16.svg',
+    path24: 'icons/user/24.svg',
   },
   {
     name: 'Window',
     slug: 'Window',
-    path16: 'icons/Window/16.svg',
-    path24: 'icons/Window/24.svg',
+    path16: 'icons/window/16.svg',
+    path24: 'icons/window/24.svg',
   },
   {
     name: 'World',
     slug: 'World',
-    path16: 'icons/World/16.svg',
-    path24: 'icons/World/24.svg',
+    path16: 'icons/world/16.svg',
+    path24: 'icons/world/24.svg',
   },
 ];
