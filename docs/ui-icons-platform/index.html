@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Document</title>
+  </head>
+  <body onload="build()">
+    <div class="search-container">
+      <input
+        type="search"
+        name="search-icons"
+        id="search"
+        placeholder="Search for an icon ( / to focus)"
+        autofocus
+      />
+    </div>
+    <div id="icons-wrapper">
+      <div id="prototype" class="icon" style="display: none">
+        <button class="icon-header" onclick="toggleVisibility(this)">
+          <img class="main-icon" />
+          <span class="icon-title">title</span>
+          <span class="icon-sizes">16, 24</span>
+        </button>
+        <div class="icon-content">
+          <table class="content-table">
+            <tr class="size">
+              <td>
+                <img class="icon16" />
+              </td>
+              <td>
+                <span class="size-label">16 &#215; 16</span>
+              </td>
+              <td>
+                <div class="size-actions">
+                  <button
+                    class="code component16"
+                    onclick="showAlert('Copied to clipboard',2000)"
+                  >
+                    &lt;IconDuplicate16&gt;
+                  </button>
+                  <button
+                    class="code import16"
+                    onclick="showAlert('Copied to clipboard',2000)"
+                  >
+                    import IconDuplicate16 from “@dhis2/ui”;
+                  </button>
+                  <button class="download">Download SVG</button>
+                </div>
+              </td>
+            </tr>
+            <tr class="size">
+              <td>
+                <img class="icon24" />
+              </td>
+              <td>
+                <span class="size-label">24 &#215; 24</span>
+              </td>
+              <td>
+                <div class="size-actions">
+                  <button
+                    class="code component24"
+                    onclick="showAlert('Copied to clipboard',2000)"
+                  >
+                    &lt;IconDuplicate24&gt;
+                  </button>
+                  <button
+                    class="code import24"
+                    onclick="showAlert('Copied to clipboard',2000)"
+                  >
+                    import IconDuplicate24 from “@dhis2/ui”;
+                  </button>
+                  <button class="download">Download SVG</button>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <p id="warning">
+        No icons found. <a href="#">Suggest an icon on Github.</a>
+      </p>
+    </div>
+    <div id="alerts"></div>
+    <script src="scripts.js"></script>
+  </body>
+</html>
