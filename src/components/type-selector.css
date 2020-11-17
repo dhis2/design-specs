@@ -57,7 +57,7 @@
   line-height: 1.4;
 }
 
-.icon {
+.visType .icon {
   width: 48px;
   height: 48px;
   margin-right: var(--spacers-dp8);
