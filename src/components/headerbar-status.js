@@ -27,7 +27,7 @@ const MobileStatusBar = (props) => (
 const StatusBadge = (props) => (
   <div class="desktop-status-badge">
     <div class="status">
-      <span class="desktop-info">{props.info}</span>
+      {'info' in props && <span class="desktop-info">{props.info}</span>}
       <div
         class={`
         status-icon
