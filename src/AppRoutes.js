@@ -9,6 +9,7 @@ import SpecColorPicker from './components/color-picker.js';
 import SpecOUTree from './components/ouTree.js';
 import SpecSegmentedControl from './components/segmented-control.js';
 import SpecTypeSelector from './components/type-selector.js';
+import SpecHeaderbarStatus from './components/headerbar-status.js';
 
 const BackLink = () => (
   <div class="back-link">
@@ -40,6 +41,7 @@ const rawComponents = [
   { url: '/org-unit-tree', component: SpecOUTree },
   { url: '/segmented-control', component: SpecSegmentedControl },
   { url: '/type-selector', component: SpecTypeSelector },
+  { url: '/headerbar-status', component: SpecHeaderbarStatus },
 ];
 
 export const componentRoutes = rawComponents.map((object) =>
@@ -71,6 +73,9 @@ function Home() {
         </li>
         <li>
           <Link to="/segmented-control">Segmented Control</Link>
+        </li>
+        <li>
+          <Link to="/headerbar-status">Headerbar Connectivity Status</Link>
         </li>
       </ul>
       Other examples/mockups
