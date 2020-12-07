@@ -1,0 +1,91 @@
+#headerbar {
+  width: 100%;
+  min-height: 48px;
+  background: #1e6194;
+  color: var(--colors-blue050);
+  display: flex;
+}
+
+#headerbar-start {
+  display: flex;
+  align-items: center;
+  min-width: 0; /* https://css-tricks.com/flexbox-truncated-text/ */
+}
+
+#headerbar-end {
+  margin-left: auto;
+  display: flex;
+}
+
+.hb-item {
+  min-height: 48px;
+  min-width: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  background: transparent;
+  border: 2px solid transparent;
+}
+.hb-item:hover {
+  cursor: pointer;
+  background-color: #1a557f;
+}
+.hb-item:active {
+  background-color: #16466a;
+}
+.hb-item:focus {
+  border-color: var(--colors-grey100);
+  background-color: #16466a;
+}
+
+.hb-item-badge {
+  font-size: 13px;
+  font-weight: 600;
+  background: var(--colors-grey900);
+  color: var(--colors-white);
+
+  min-height: 18px;
+  min-width: 18px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 4px;
+
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.logo {
+  width: 24px;
+}
+
+.hb-home {
+  min-width: 48px;
+  min-height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid #1a557f;
+}
+
+.hb-title {
+  font-size: 14px;
+  font-weight: 500;
+  margin-left: var(--spacers-dp12);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* avatar */
+.hb-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 16px;
+  background-color: rgba(64, 75, 90, 0.5);
+  mix-blend-mode: multiply;
+}

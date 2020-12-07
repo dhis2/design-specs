@@ -10,6 +10,7 @@ import SpecOUTree from './components/ouTree.js';
 import SpecSegmentedControl from './components/segmented-control.js';
 import SpecTypeSelector from './components/type-selector.js';
 import SpecHeaderbarStatus from './components/headerbar-status.js';
+import SpecHeaderbarProposal from './components/headerbar.js';
 
 const BackLink = () => (
   <div class="back-link">
@@ -42,6 +43,7 @@ const rawComponents = [
   { url: '/segmented-control', component: SpecSegmentedControl },
   { url: '/type-selector', component: SpecTypeSelector },
   { url: '/headerbar-status', component: SpecHeaderbarStatus },
+  { url: '/headerbar', component: SpecHeaderbarProposal },
 ];
 
 export const componentRoutes = rawComponents.map((object) =>
@@ -85,6 +87,9 @@ function Home() {
         </li>
         <li>
           <Link to="/type-selector">Data Visualizer: Type Selector</Link>
+        </li>
+        <li>
+          <Link to="/headerbar">Headerbar updated design proposal</Link>
         </li>
       </ul>
     </nav>
