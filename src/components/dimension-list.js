@@ -26,7 +26,10 @@ const DimensionItem = (props) => (
 export default function specDimensionList() {
   return (
     <>
-      <DevExample title="Dimension List">
+      <DevExample
+        title="Dimension List"
+        notes="The entire dimension item is clickable and draggable. Clicking any point, except the menu trigger, will open the dimension modal. Dragging any point will activate drag mode. A single pointer cursor is used, rather than attempting to switch between cursors."
+      >
         <DimensionSidebar>
           <DimensionItem picked icon={<DemoIconData />}>
             Data
