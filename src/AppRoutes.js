@@ -11,6 +11,7 @@ import SpecSegmentedControl from './components/segmented-control.js';
 import SpecTypeSelector from './components/type-selector.js';
 import SpecHeaderbarStatus from './components/headerbar-status.js';
 import SpecHeaderbarProposal from './components/headerbar.js';
+import SpecDimensionList from './components/dimension-list.js';
 
 const BackLink = () => (
   <div class="back-link">
@@ -44,6 +45,7 @@ const rawComponents = [
   { url: '/type-selector', component: SpecTypeSelector },
   { url: '/headerbar-status', component: SpecHeaderbarStatus },
   { url: '/headerbar', component: SpecHeaderbarProposal },
+  { url: '/dimension-list', component: SpecDimensionList },
 ];
 
 export const componentRoutes = rawComponents.map((object) =>
@@ -78,6 +80,9 @@ function Home() {
         </li>
         <li>
           <Link to="/headerbar-status">Headerbar Connectivity Status</Link>
+        </li>
+        <li>
+          <Link to="/dimension-list">Dimension Item List</Link>
         </li>
       </ul>
       Other examples/mockups
