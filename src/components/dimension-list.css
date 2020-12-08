@@ -9,6 +9,10 @@
   cursor: pointer;
 }
 
+.dimension-item.drag-only {
+  cursor: grab;
+}
+
 .di-icon {
   flex: 0 0 auto;
   width: 16px;
@@ -24,6 +28,14 @@
   line-height: 17px;
 }
 
+.di-lock {
+  flex: 0 0 auto;
+  width: 16px;
+  height: 16px;
+  margin: 2px 0 0 4px;
+  overflow: hidden;
+}
+
 /* ... menu  */
 .di-menu-trigger {
   visibility: hidden;
@@ -31,6 +43,7 @@
   width: 20px;
   height: 20px;
   border-radius: 4px;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -102,7 +115,6 @@
 /* wrapper */
 .dimension-list {
   width: 260px;
-  height: 300px;
   background: var(--colors-grey200);
   padding: var(--spacers-dp8);
 }
