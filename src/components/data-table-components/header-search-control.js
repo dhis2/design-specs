@@ -1,10 +1,10 @@
 import React from 'react';
 
-import {Search} from './dataTableIcons.js'
+import { IconSearch16 } from '@dhis2/ui-icons';
 
-const HeaderSearchControl = props => (
+const HeaderSearchControl = (props) => (
   <span class="header-action-wrap">
-    <Search />
+    <IconSearch16 color="var(-colors-grey600)" />
   </span>
 );
 

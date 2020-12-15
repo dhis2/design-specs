@@ -1,9 +1,9 @@
-import React from "react";
-import { ArrowDown } from "./dataTableIcons.js";
+import React from 'react';
+import { IconChevronDown24 } from '@dhis2/ui-icons';
 
-const ExpandCell = props => (
+const ExpandCell = (props) => (
   <td class="cell-leading-icon cell-expand-control">
-    <ArrowDown />
+    <IconChevronDown24 color="var(--colors-grey700" />
   </td>
 );
 
