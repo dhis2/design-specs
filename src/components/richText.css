@@ -7,7 +7,7 @@
 }
 
 .toolbar-actions-wrap {
-  display:flex;
+  display: flex;
 }
 
 .main-actions button {
@@ -21,7 +21,7 @@
 }
 
 .toolbar-preview-wrap {
-  margin-bottom:var(--spacers-dp4);
+  margin-bottom: var(--spacers-dp4);
   text-align: right;
 }
 
@@ -29,6 +29,10 @@
   padding: var(--spacers-dp8);
 }
 
+.rt-link-input {
+  margin-bottom: var(--spacers-dp12);
+}
+
 .link-dialog-buttons button {
-  margin-right:var(--spacers-dp8);
+  margin-right: var(--spacers-dp8);
 }

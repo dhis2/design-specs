@@ -1,9 +1,9 @@
-import React from "react";
-import "./color-picker.css";
+import React from 'react';
+import './color-picker.css';
 
-import { Input, Button } from "@dhis2/ui-core";
-
-import { DevExample } from "../assets/DevExample.js";
+import { Button } from '@dhis2/ui-core';
+import { InputField } from '@dhis2/ui-widgets';
+import { DevExample } from '../assets/DevExample.js';
 
 const RemoveColor = () => (
   <div class="remove-wrap">
@@ -15,7 +15,7 @@ const RemoveColor = () => (
 
 const Hex = () => (
   <div class="hex">
-    <Input dense placeholder="e.g. #F9F9F9" value="#FA9D24" />
+    <InputField dense placeholder="e.g. #F9F9F9" value="#FA9D24" />
   </div>
 );
 
@@ -43,11 +43,11 @@ const CustomWrap = () => (
   </>
 );
 
-const ColorBlock = props => (
+const ColorBlock = (props) => (
   <div
     className={`
 color-block
-${"selected" in props && " selected"}
+${'selected' in props && ' selected'}
 `}
     style={{ backgroundColor: props.color }}
   ></div>
@@ -55,20 +55,22 @@ ${"selected" in props && " selected"}
 
 const Divider = () => <div class="divider"></div>;
 
-const ColorPickerPaletteSet = props => <div class="set">{props.children}</div>;
+const ColorPickerPaletteSet = (props) => (
+  <div class="set">{props.children}</div>
+);
 
-const ColorPickerPalettes = props => (
+const ColorPickerPalettes = (props) => (
   <div
     className={`
-${"columns" in props && "palette-wrap-columns"}
-${"rows" in props && "palette-wrap-rows"}
+${'columns' in props && 'palette-wrap-columns'}
+${'rows' in props && 'palette-wrap-rows'}
 `}
   >
     {props.children}
   </div>
 );
 
-const ColorPicker = props => (
+const ColorPicker = (props) => (
   <div class="color-picker">
     {props.children}
     <Divider />
