@@ -1,5 +1,4 @@
 import React from 'react';
-import propTypes from '@dhis2/prop-types';
 import cx from 'classnames';
 import { IconEdit16 } from '@dhis2/ui-icons';
 

@@ -1,5 +1,4 @@
 import React from 'react';
-import { DragHandle } from './dataTableIcons.js';
 import { IconDragHandle24 } from '@dhis2/ui-icons';
 
 const DragCell = (props) => (

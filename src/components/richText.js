@@ -11,15 +11,7 @@ import {
 } from '@dhis2/ui-core';
 import { InputField } from '@dhis2/ui-widgets';
 import { DevExample } from '../assets/DevExample.js';
-import {
-  Bold,
-  Italic,
-  Header,
-  UnorderedList,
-  OrderedList,
-  Link,
-  Mention,
-} from './richTextIcons.js';
+import { Header, OrderedList } from './richTextIcons.js';
 import {
   IconTextBold24,
   IconTextItalic24,

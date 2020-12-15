@@ -19,7 +19,6 @@ import DragCell from './data-table-components/content-drag-cell.js';
 import ExpandCell from './data-table-components/content-expand-cell.js';
 import Footer from './data-table-components/footer.js';
 
-import { MoreDots } from './data-table-components/dataTableIcons.js';
 import { IconMore24 } from '@dhis2/ui-icons';
 
 // Ad-hoc Components, not included in data-table
