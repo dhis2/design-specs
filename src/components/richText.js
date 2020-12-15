@@ -1,7 +1,14 @@
 import React from 'react';
 import './richText.css';
 
-import { Button, TextArea, Menu, MenuItem, Card } from '@dhis2/ui-core';
+import {
+  Button,
+  TextArea,
+  Menu,
+  MenuItem,
+  Card,
+  Tooltip,
+} from '@dhis2/ui-core';
 import { InputField } from '@dhis2/ui-widgets';
 import { DevExample } from '../assets/DevExample.js';
 import {
@@ -13,6 +20,13 @@ import {
   Link,
   Mention,
 } from './richTextIcons.js';
+import {
+  IconTextBold24,
+  IconTextItalic24,
+  IconAt24,
+  IconLink24,
+  IconList24,
+} from '@dhis2/ui-icons';
 
 const RTToolbarWrapper = (props) => (
   <div class="rich-text-toolbar">{props.children}</div>
@@ -22,13 +36,49 @@ const RTToolbarActions = (props) => (
   <>
     <div class="toolbar-actions-wrap">
       <div class="main-actions">
-        <Button secondary small icon={<Bold />} />
-        <Button secondary small icon={<Italic />} />
-        <Button secondary small icon={<Header />} />
-        <Button secondary small icon={<UnorderedList />} />
-        <Button secondary small icon={<OrderedList />} />
-        <Button secondary small icon={<Link />} />
-        {'mentions' in props && <Button secondary small icon={<Mention />} />}
+        <Tooltip content="Bold text">
+          <Button
+            secondary
+            small
+            icon={<IconTextBold24 color="var(--colors-grey700" />}
+          />
+        </Tooltip>
+        <Tooltip content="Italic text">
+          <Button
+            secondary
+            small
+            icon={<IconTextItalic24 color="var(--colors-grey700" />}
+          />
+        </Tooltip>
+        <Tooltip content="Headings">
+          <Button secondary small icon={<Header />} />
+        </Tooltip>
+        <Tooltip content="Unordered list">
+          <Button
+            secondary
+            small
+            icon={<IconList24 color="var(--colors-grey700" />}
+          />
+        </Tooltip>
+        <Tooltip content="Ordered list">
+          <Button secondary small icon={<OrderedList />} />
+        </Tooltip>
+        <Tooltip content="Link to a URL">
+          <Button
+            secondary
+            small
+            icon={<IconLink24 color="var(--colors-grey700" />}
+          />
+        </Tooltip>
+        {'mentions' in props && (
+          <Tooltip content="Mention a user">
+            <Button
+              secondary
+              small
+              icon={<IconAt24 color="var(--colors-grey700" />}
+            />
+          </Tooltip>
+        )}
       </div>
       <div class="side-actions">
         <Button secondary small>
