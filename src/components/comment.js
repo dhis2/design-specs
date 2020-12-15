@@ -1,30 +1,30 @@
 import React from 'react';
 import './comment.css';
 
+import { Button, TextArea, Tooltip } from '@dhis2/ui-core';
+
+import { DevExample } from '../assets/DevExample.js';
 import {
-  CssReset,
-  CssVariables,
-  Button,
-  TextArea,
-} from "@dhis2/ui-core";
+  IconThumbUp16,
+  IconReply16,
+  IconEdit16,
+  IconDelete16,
+} from '@dhis2/ui-icons';
 
-import { DevExample } from "../assets/DevExample.js";
-import { Like, Reply, View, Share, Edit, Delete } from "../assets/icons.js";
+const Avatar = (props) => <div class="avatar">{props.initials}</div>;
 
-const Avatar = props => <div class="avatar">{props.initials}</div>;
-
-const CommentInput = props => (
+const CommentInput = (props) => (
   <div class="comment-wrap comment-input">
     <div class="avatar-wrap">
       <Avatar initials="MM" />
     </div>
 
     <div class="input-wrap">
-      {"idle-empty" in props && (
+      {'idle-empty' in props && (
         <TextArea placeholder="Write a comment" rows="1" />
       )}
 
-      {"active" in props && (
+      {'active' in props && (
         <>
           <TextArea value="a comment which is being written into" />
           <div class="extras-wrap">{props.extras}</div>
@@ -40,51 +40,66 @@ const CommentInput = props => (
   </div>
 );
 
-const DisplayCommentToolbar = props => (
+const DisplayCommentToolbar = (props) => (
   <div class="actions">{props.children}</div>
 );
 
-const DisplayCommentDefaultToolset = props => (
+const DisplayCommentDefaultToolset = (props) => (
   <>
-    <Action icon={<Like />} />
-    <Action icon={<Reply />} />
-    {"logged-in" in props && (
+    <Tooltip content="Like this interpretation">
+      <Action icon={<IconThumbUp16 color="var(--colors-grey700)" />} />
+    </Tooltip>
+    <Tooltip content="Reply">
+      <Action icon={<IconReply16 color="var(--colors-grey700)" />} />
+    </Tooltip>
+    {'logged-in' in props && (
       <>
-        <Action icon={<Edit />} />
-        <Action icon={<Delete />} />
+        <Tooltip content="Edit">
+          <Action icon={<IconEdit16 color="var(--colors-grey700)" />} />
+        </Tooltip>
+        <Tooltip content="Delete">
+          <Action icon={<IconDelete16 color="var(--colors-grey700)" />} />
+        </Tooltip>
       </>
     )}
   </>
 );
 
-const DisplayCommentReplyToolset = props => (
+const DisplayCommentReplyToolset = (props) => (
   <>
-    <Action icon={<Like />} />
-    {"logged-in" in props && (
+    <Tooltip content="Like this interpretation">
+      <Action icon={<IconThumbUp16 color="var(--colors-grey700)" />} />
+    </Tooltip>
+
+    {'logged-in' in props && (
       <>
-        <Action icon={<Edit />} />
-        <Action icon={<Delete />} />
+        <Tooltip content="Edit">
+          <Action icon={<IconEdit16 color="var(--colors-grey700)" />} />
+        </Tooltip>
+        <Tooltip content="Delete">
+          <Action icon={<IconDelete16 color="var(--colors-grey700)" />} />
+        </Tooltip>
       </>
     )}
   </>
 );
 
-const Action = props => (
+const Action = (props) => (
   <div class="action">
     <a href="#">{props.icon}</a>
   </div>
 );
 
-const DisplayMetaItem = props => (
+const DisplayMetaItem = (props) => (
   <span class="meta-item">{props.children}</span>
 );
 
-const DisplayAuthor = props => <span class="author">{props.children}</span>;
+const DisplayAuthor = (props) => <span class="author">{props.children}</span>;
 
-const DisplayContent = props => <p class="content">{props.children}</p>;
+const DisplayContent = (props) => <p class="content">{props.children}</p>;
 
-const DisplayReplies = props => <div class="replies">{props.children}</div>;
-const DisplayComment = props => (
+const DisplayReplies = (props) => <div class="replies">{props.children}</div>;
+const DisplayComment = (props) => (
   <>
     <div class="comment-wrap display-comment">
       <div class="avatar-wrap">
@@ -94,7 +109,7 @@ const DisplayComment = props => (
         <div class="meta">
           <DisplayAuthor>{props.author}</DisplayAuthor>
           <DisplayMetaItem>{props.timestamp}</DisplayMetaItem>
-          {"edited" in props && <DisplayMetaItem>Edited</DisplayMetaItem>}
+          {'edited' in props && <DisplayMetaItem>Edited</DisplayMetaItem>}
         </div>
         <DisplayContent>{props.children}</DisplayContent>
         <DisplayCommentToolbar>{props.actions}</DisplayCommentToolbar>
@@ -104,14 +119,13 @@ const DisplayComment = props => (
   </>
 );
 
-const Conversation = props => (
+const Conversation = (props) => (
   <div class="conversation-wrap">{props.children}</div>
 );
 
 export default function SpecComment() {
   return (
     <>
-
       <DevExample title="Empty, idle comment input">
         <CommentInput idle-empty />
       </DevExample>
