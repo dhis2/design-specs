@@ -88,9 +88,6 @@ function Home() {
       Other examples/mockups
       <ul>
         <li>
-          <Link to="/dv-start-screen">Data Visualizer: Start Screen</Link>
-        </li>
-        <li>
           <Link to="/type-selector">Data Visualizer: Type Selector</Link>
         </li>
         <li>

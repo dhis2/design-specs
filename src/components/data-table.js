@@ -1,25 +1,25 @@
-import React from "react";
-import "./data-table.css";
+import React from 'react';
+import './data-table.css';
 
-import { DropdownButton, Button, Checkbox, Input } from "@dhis2/ui-core";
+import { DropdownButton, Button, Checkbox, Input } from '@dhis2/ui-core';
 
-import { DevExample } from "../assets/DevExample.js";
+import { DevExample } from '../assets/DevExample.js';
 
-import Table from "./data-table-components/table.js";
-import Toolbar from "./data-table-components/toolbar.js";
-import HeaderRow from "./data-table-components/header-row.js";
-import HeaderCell from "./data-table-components/header-cell.js";
-import HeaderSortControl from "./data-table-components/header-sort-control.js";
-import HeaderSearchControl from "./data-table-components/header-search-control.js";
-import TableBody from "./data-table-components/table-body.js";
-import Row from "./data-table-components/row.js";
-import ContentCell from "./data-table-components/content-cell.js";
-import SelectCell from "./data-table-components/content-select-cell.js";
-import DragCell from "./data-table-components/content-drag-cell.js";
-import ExpandCell from "./data-table-components/content-expand-cell.js";
-import Footer from "./data-table-components/footer.js";
+import Table from './data-table-components/table.js';
+import Toolbar from './data-table-components/toolbar.js';
+import HeaderRow from './data-table-components/header-row.js';
+import HeaderCell from './data-table-components/header-cell.js';
+import HeaderSortControl from './data-table-components/header-sort-control.js';
+import HeaderSearchControl from './data-table-components/header-search-control.js';
+import TableBody from './data-table-components/table-body.js';
+import Row from './data-table-components/row.js';
+import ContentCell from './data-table-components/content-cell.js';
+import SelectCell from './data-table-components/content-select-cell.js';
+import DragCell from './data-table-components/content-drag-cell.js';
+import ExpandCell from './data-table-components/content-expand-cell.js';
+import Footer from './data-table-components/footer.js';
 
-import { MoreDots } from "./data-table-components/dataTableIcons.js";
+import { IconMore24 } from '@dhis2/ui-icons';
 
 // Ad-hoc Components, not included in data-table
 
@@ -29,22 +29,22 @@ const HeaderSearch = () => (
   </div>
 );
 
-const TableActionStrip = props => (
+const TableActionStrip = (props) => (
   <div class="cell-action-strip">{props.children}</div>
 );
 
-const Link = props => (
+const Link = (props) => (
   <a href="dhis2.org" class="link">
     {props.children}
   </a>
 );
 
-const SearchWrap = props => (
-  <div style={{ width: "320px" }}>{props.children}</div>
+const SearchWrap = (props) => (
+  <div style={{ width: '320px' }}>{props.children}</div>
 );
 
-const ActionWrap = props => (
-  <div class="action-wrap" style={{ textAlign: "right" }}>
+const ActionWrap = (props) => (
+  <div class="action-wrap" style={{ textAlign: 'right' }}>
     {props.children}
   </div>
 );
@@ -257,9 +257,11 @@ const DemoOverflowActions = () => (
         <ContentCell>Content</ContentCell>
         <ContentCell>Content</ContentCell>
         <ContentCell right>
-          <DropdownButton secondary small>
-            <MoreDots />
-          </DropdownButton>
+          <Button
+            secondary
+            small
+            icon={<IconMore24 color="var(--colors-grey700)" />}
+          />
         </ContentCell>
       </Row>
     </TableBody>

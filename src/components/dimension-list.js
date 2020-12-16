@@ -1,5 +1,16 @@
 import React from 'react';
 import './dimension-list.css';
+import {
+  IconDimensionData16,
+  IconDimensionOrgUnit16,
+  IconClock16,
+  IconDimensionCategoryOptionGroupset16,
+  IconDimensionDataElementGroupset16,
+  IconDimensionOrgUnitGroupset16,
+  IconLock16,
+  IconFilter16,
+  IconMore16,
+} from '@dhis2/ui-icons';
 
 import { DevExample } from '../assets/DevExample.js';
 
@@ -21,13 +32,13 @@ const DimensionItem = (props) => (
     <div class="di-label">{props.children}</div>
     {props.locked ? (
       <div class="di-lock">
-        <IconLock />
+        <IconLock16 />
       </div>
     ) : (
       ''
     )}
     <div class="di-menu-trigger">
-      <IconMore />
+      <IconMore16 />
     </div>
   </div>
 );
@@ -39,30 +50,41 @@ export default function specDimensionList() {
         notes="The entire dimension item is clickable and draggable. Clicking any point, except the menu trigger, will open the dimension modal. Dragging any point will activate drag mode. A single pointer cursor is used, rather than attempting to switch between cursors."
       >
         <DimensionSidebar>
-          <DimensionItem picked icon={<DemoIconData />}>
+          <DimensionItem picked icon={<IconDimensionData16 />}>
             Data
           </DimensionItem>
-          <DimensionItem picked icon={<DemoIconPeriod />}>
+          <DimensionItem picked icon={<IconClock16 />}>
             Period
           </DimensionItem>
-          <DimensionItem icon={<DemoIconOU />}>Organisation unit</DimensionItem>
-          <DimensionItem icon={<DemoIcon1 />} recommended>
+          <DimensionItem icon={<IconDimensionOrgUnit16 />}>
+            Organisation unit
+          </DimensionItem>
+          <DimensionItem
+            icon={<IconDimensionDataElementGroupset16 />}
+            recommended
+          >
             Area
           </DimensionItem>
-          <DimensionItem icon={<DemoIcon2 />} picked>
+          <DimensionItem icon={<IconDimensionOrgUnitGroupset16 />} picked>
             Facility Ownership
           </DimensionItem>
-          <DimensionItem icon={<DemoIcon1 />}>
+          <DimensionItem icon={<IconDimensionCategoryOptionGroupset16 />}>
             Location Fixed/Outreach
           </DimensionItem>
-          <DimensionItem icon={<DemoIcon2 />} recommended>
+          <DimensionItem
+            icon={<IconDimensionDataElementGroupset16 />}
+            recommended
+          >
             Dimension with a long title that must be handled on multiple lines
             and not break the dimension item
           </DimensionItem>
-          <DimensionItem icon={<DemoIcon1 />} disabled>
+          <DimensionItem
+            icon={<IconDimensionCategoryOptionGroupset16 />}
+            disabled
+          >
             Disabled item
           </DimensionItem>
-          <DimensionItem picked locked icon={<DemoIconData />}>
+          <DimensionItem picked locked icon={<IconDimensionData16 />}>
             Data
           </DimensionItem>
         </DimensionSidebar>
@@ -73,7 +95,7 @@ export default function specDimensionList() {
         notes="Some dimension items cannot be clicked to open a modal. There are only two actions: click the menu trigger, or drag the item. In this case, the whole item is draggable. (Example: Assigned Categories in Data Visualizer)."
       >
         <DimensionSidebar>
-          <DimensionItem dragOnly icon={<DemoIconAC />}>
+          <DimensionItem dragOnly icon={<IconFilter16 />}>
             Assigned Categories
           </DimensionItem>
         </DimensionSidebar>
@@ -81,119 +103,3 @@ export default function specDimensionList() {
     </>
   );
 }
-
-// Example icons - Will be supplied by ui-icons
-
-const DemoIcon1 = (props) => (
-  <svg
-    height="16"
-    viewBox="0 0 16 16"
-    width="16"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="m14 1c.5522847 0 1 .44771525 1 1v12c0 .5522847-.4477153 1-1 1h-12c-.55228475 0-1-.4477153-1-1v-12c0-.55228475.44771525-1 1-1zm0 1h-12v12h12zm-3 7c1.1045695 0 2 .8954305 2 2s-.8954305 2-2 2-2-.8954305-2-2 .8954305-2 2-2zm-4 0v4h-4v-4zm4 1c-.5522847 0-1 .4477153-1 1s.4477153 1 1 1 1-.4477153 1-1-.4477153-1-1-1zm-5 0h-2v2h2zm-1-7c1.1045695 0 2 .8954305 2 2s-.8954305 2-2 2-2-.8954305-2-2 .8954305-2 2-2zm8 0v4h-4v-4zm-8 1c-.55228475 0-1 .44771525-1 1s.44771525 1 1 1 1-.44771525 1-1-.44771525-1-1-1zm7 0h-2v2h2z"
-      fill="inherit"
-    />
-  </svg>
-);
-
-const DemoIcon2 = (props) => (
-  <svg
-    height="16"
-    viewBox="0 0 16 16"
-    width="16"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="m14 1c.5522847 0 1 .44771525 1 1v12c0 .5522847-.4477153 1-1 1h-12c-.55228475 0-1-.4477153-1-1v-12c0-.55228475.44771525-1 1-1zm0 1h-12v12h12zm-9 1v2h3v-1h4v4h-4v-2h-3v4h3v-1h4v4h-4v-2h-4v-8zm6 7h-2v2h2zm0-5h-2v2h2z"
-      fill="inherit"
-    />
-  </svg>
-);
-
-const DemoIconData = (props) => (
-  <svg
-    height="16"
-    viewBox="0 0 16 16"
-    width="16"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="m12 1c.5522847 0 1 .44771525 1 1v11c0 .5522847-.4477153 1-1 1h-8c-.55228475 0-1-.4477153-1-1v-11c0-.55228475.44771525-1 1-1zm-8 9v3h8v-3zm2 1v1h-1v-1zm0-4v1h-1v-1zm6-5h-8v3h8zm-6 1v1h-1v-1zm-2 6h8v-3h-8z"
-      fill="inherit"
-    />
-  </svg>
-);
-
-const DemoIconOU = (props) => (
-  <svg
-    height="16"
-    viewBox="0 0 16 16"
-    width="16"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="m6 1v4h-2v2h6v-1h4v4h-4v-2h-6v4h6v-1h4v4h-4v-2h-6.5c-.24545989 0-.44960837-.1768752-.49194433-.4101244l-.00805567-.0898756v-7.5h-1v-4zm7 11h-2v2h2zm0-5h-2v2h2zm-8-5h-2v2h2z"
-      fill="inherit"
-    />
-  </svg>
-);
-
-const DemoIconPeriod = (props) => (
-  <svg
-    height="16"
-    viewBox="0 0 16 16"
-    width="16"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="m8 2c3.3137085 0 6 2.6862915 6 6s-2.6862915 6-6 6-6-2.6862915-6-6 2.6862915-6 6-6zm0 1c-2.76142375 0-5 2.23857625-5 5 0 2.7614237 2.23857625 5 5 5 2.7614237 0 5-2.2385763 5-5 0-2.76142375-2.2385763-5-5-5zm.5 1.5v3.293l1.8535534 1.85344661-.70710679.70710679-2.14644661-2.14644662v-3.70710678z"
-      fill="inherit"
-    />
-  </svg>
-);
-
-const IconMore = (props) => (
-  <svg
-    height="16"
-    viewBox="0 0 16 16"
-    width="16"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="m3 7c.55228475 0 1 .44771525 1 1s-.44771525 1-1 1-1-.44771525-1-1 .44771525-1 1-1zm5 0c.55228475 0 1 .44771525 1 1s-.44771525 1-1 1-1-.44771525-1-1 .44771525-1 1-1zm5 0c.5522847 0 1 .44771525 1 1s-.4477153 1-1 1-1-.44771525-1-1 .4477153-1 1-1z"
-      fill="inherit"
-      fill-rule="evenodd"
-    />
-  </svg>
-);
-
-const DemoIconAC = () => (
-  <svg
-    height="16"
-    viewBox="0 0 16 16"
-    width="16"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="m10 10-1 1h-2l-1-1zm3-3-1 1h-8l-1-1zm2-3-1 1h-12l-1-1z"
-      fill="inherit"
-      fill-rule="evenodd"
-    />
-  </svg>
-);
-
-const IconLock = () => (
-  <svg
-    height="16"
-    viewBox="0 0 16 16"
-    width="16"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="m8 1c1.65685425 0 3 1.34314575 3 3v2h1c.5522847 0 1 .50367966 1 1.125v6.75c0 .6213203-.4477153 1.125-1 1.125h-8c-.55228475 0-1-.5036797-1-1.125v-6.75c0-.62132034.44771525-1.125 1-1.125h1v-2c0-1.65685425 1.34314575-3 3-3zm4 6h-8v7h8zm-4 2c.55228475 0 1 .44771525 1 1 0 .5522847-.44771525 1-1 1s-1-.4477153-1-1c0-.55228475.44771525-1 1-1zm0-7c-1.0543618 0-1.91816512.81587779-1.99451426 1.85073766l-.00548574.14926234v2h4v-2c0-1.1045695-.8954305-2-2-2z"
-      fill="inherit"
-    />
-  </svg>
-);
