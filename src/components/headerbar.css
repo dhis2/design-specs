@@ -43,7 +43,9 @@
 .hb-item-badge {
   font-size: 13px;
   font-weight: 600;
-  background: var(--colors-grey900);
+  /* background: var(--colors-grey900); */
+  background: var(--colors-teal500);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   color: var(--colors-white);
 
   min-height: 18px;
