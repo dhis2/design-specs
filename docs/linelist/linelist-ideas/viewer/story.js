@@ -12,7 +12,7 @@ var story = {
  "disableHotspots": true,
  "zoomEnabled": true,
  "title": "linelist-ideas",
- "layersExist": true,
+ "layersExist": false,
  "centerContent": false,
  "highlightLinks": false,
  "pages": [
