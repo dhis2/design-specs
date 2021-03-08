@@ -12,6 +12,7 @@ import SpecTypeSelector from './components/type-selector.js';
 import SpecHeaderbarStatus from './components/headerbar-status.js';
 import SpecHeaderbarProposal from './components/headerbar.js';
 import SpecDimensionList from './components/dimension-list.js';
+import SpecSidenav from './components/sidenav.js';
 
 const BackLink = () => (
   <div class="back-link">
@@ -46,6 +47,7 @@ const rawComponents = [
   { url: '/headerbar-status', component: SpecHeaderbarStatus },
   { url: '/headerbar', component: SpecHeaderbarProposal },
   { url: '/dimension-list', component: SpecDimensionList },
+  { url: '/sidenav', component: SpecSidenav },
 ];
 
 export const componentRoutes = rawComponents.map((object) =>
@@ -83,6 +85,9 @@ function Home() {
         </li>
         <li>
           <Link to="/dimension-list">Dimension Item List</Link>
+        </li>
+        <li>
+          <Link to="/sidenav">Sidenav</Link>
         </li>
       </ul>
       Other examples/mockups
