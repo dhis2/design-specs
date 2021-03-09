@@ -2,11 +2,18 @@ import React from 'react'
 
 export const DevExample = (props) => (
     <div
+        id={props.id}
         class="dev-example"
         style={{ width: props.width, height: props.height }}
     >
         <p class="dev-label">Example</p>
-        <p class="dev-title">{props.title}</p>
+        <p class="dev-title">
+            {props.id ? (
+                <a href={`#${props.id}`}>{props.title}</a>
+            ) : (
+                <span>{props.title}</span>
+            )}
+        </p>
         {'notes' in props && (
             <>
                 <p class="dev-label">Notes</p>
@@ -35,6 +42,9 @@ export const DevExample = (props) => (
                     font-size: 19px;
                     letter-spacing: 0;
                     margin: 0 0 24px 0;
+                }
+                .dev-title a {
+                    color: #141741;
                 }
                 .dev-notes {
                     max-width: 620px;
