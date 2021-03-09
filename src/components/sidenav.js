@@ -87,7 +87,7 @@ export default function specDimensionList() {
     return (
         <>
             <CssReset />
-            <DevExample title="Two-level" height="800px">
+            <DevExample title="Two-level" height="800px" id="two-level">
                 <DemoSidebarContainer>
                     <Sidenav>
                         <SidenavItems>
@@ -140,7 +140,7 @@ export default function specDimensionList() {
                 </DemoSidebarContainer>
             </DevExample>
 
-            <DevExample title="Two-level, with icons">
+            <DevExample title="Two-level, with icons" id="two-level-icons">
                 <DemoSidebarContainer>
                     <Sidenav>
                         <SidenavItems>
@@ -198,7 +198,7 @@ export default function specDimensionList() {
                 </DemoSidebarContainer>
             </DevExample>
 
-            <DevExample title="Item states" height="320px">
+            <DevExample title="Item states" height="320px" id="sidenav-states">
                 <DemoSidebarContainer>
                     <Sidenav>
                         <SidenavItems>
@@ -218,7 +218,11 @@ export default function specDimensionList() {
                 </DemoSidebarContainer>
             </DevExample>
 
-            <DevExample title="Custom item content" height="400px">
+            <DevExample
+                title="Custom item content"
+                height="400px"
+                id="sidenav-custom-content"
+            >
                 <DemoSidebarContainer>
                     <Sidenav>
                         <SidenavItems>
@@ -234,6 +238,7 @@ export default function specDimensionList() {
                 title="Divider, section titles"
                 height="700px"
                 notes="Dividers and section titles do not depend on one another."
+                id="sidenav-divider-titles"
             >
                 <DemoSidebarContainer>
                     <Sidenav>
@@ -263,7 +268,11 @@ export default function specDimensionList() {
                 </DemoSidebarContainer>
             </DevExample>
 
-            <DevExample title="Header and footer" height="600px">
+            <DevExample
+                title="Header and footer"
+                height="600px"
+                id="sidenav-header-footer"
+            >
                 <DemoSidebarContainer>
                     <Sidenav>
                         <SidenavHeader>
