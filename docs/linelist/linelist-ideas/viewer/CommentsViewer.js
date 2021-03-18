@@ -5,6 +5,8 @@ class CommentsViewer extends AbstractViewer {
     constructor() {
         super()
 
+        this.alwaysHandlePageChanged = true
+
         this.comments = null
         this.inputFocused = false
         commentsViewer = this
@@ -26,6 +28,7 @@ class CommentsViewer extends AbstractViewer {
         $('#comments_viewer').addClass("hidden")
         super._hideSelf()
         viewer.refresh_url(viewer.currentPage, "", false)
+        viewer.currentPage.linksDiv.children("a").show()
         this.comments.hideViewer()
     }
 
@@ -44,6 +47,10 @@ class CommentsViewer extends AbstractViewer {
     }
 
     pageChanged() {
+        this._showCommentCounter()
+        if (!this.visible) {
+            return
+        }
         if (!this.inited) return this.initialize();
         comments.reloadComments()
     }
@@ -68,6 +75,36 @@ class CommentsViewer extends AbstractViewer {
         return true
     }
     /////////////////////////////////////////////////
+
+    _showCommentCounter() {
+        var formData = new FormData();
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", story.commentsURL + "&cmd=getInfo", true);
+        xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+        xhr.onload = function () {
+            var result = JSON.parse(this.responseText);
+            //
+            if ("ok" == result.status) {
+                commentsViewer.updateCommentCounter(result.data.commentsTotal)
+            } else {
+                console.log(result.message);
+            }
+            return
+
+        };
+        xhr.send(formData);
+    }
+
+    updateCommentCounter(total) {
+        var div = $('#nav .navCenter .pageComments')
+        if (total > 0) {
+            div.html(total);
+            div.show()
+        } else {
+            div.hide()
+        }
+    }
 
     _showComments() {
         var formData = new FormData();
@@ -101,11 +138,10 @@ class CommentsViewer extends AbstractViewer {
         if (!this.inited) this.initialize()
         $('#comments_viewer').removeClass("hidden")
         super._showSelf()
+        //
         viewer.refresh_url(viewer.currentPage, "", false)
+        viewer.currentPage.linksDiv.children("a").hide()
         //
-
-        //
-
         if (this.comments) this.comments.showViewer()
     }
 
