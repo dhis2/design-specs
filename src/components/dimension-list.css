@@ -1,120 +1,119 @@
 .dimension-item {
-  background-color: var(--colors-grey200);
-  color: var(--colors-grey800);
-  fill: var(--colors-grey800);
-  display: flex;
-  padding: 2px 4px;
-  margin-bottom: 4px;
-  border-radius: 3px;
-  cursor: pointer;
+    background-color: transparent;
+    color: var(--colors-grey900);
+    fill: var(--colors-grey800);
+    display: flex;
+    padding: 2px 4px;
+    margin-bottom: 4px;
+    border-radius: 3px;
+    cursor: pointer;
 }
 
 .dimension-item.drag-only {
-  cursor: grab;
+    cursor: grab;
 }
 
 .di-icon {
-  flex: 0 0 auto;
-  width: 16px;
-  height: 16px;
-  margin: 2px 6px 0 0;
-  overflow: hidden;
+    flex: 0 0 auto;
+    width: 16px;
+    height: 16px;
+    margin: 2px 6px 0 0;
+    overflow: hidden;
 }
 
 .di-label {
-  flex: 0 1 auto;
-  margin-top: 2px;
-  font-size: 14px;
-  line-height: 17px;
+    flex: 0 1 auto;
+    margin-top: 2px;
+    font-size: 14px;
+    line-height: 17px;
 }
 
 .di-lock {
-  flex: 0 0 auto;
-  width: 16px;
-  height: 16px;
-  margin: 2px 0 0 4px;
-  overflow: hidden;
+    flex: 0 0 auto;
+    width: 16px;
+    height: 16px;
+    margin: 2px 0 0 4px;
+    overflow: hidden;
 }
 
 /* ... menu  */
 .di-menu-trigger {
-  visibility: hidden;
-  flex: 0 0 auto;
-  width: 20px;
-  height: 20px;
-  border-radius: 4px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: 4px;
-  background-color: transparent;
-  fill: var(--colors-grey800);
+    visibility: hidden;
+    flex: 0 0 auto;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 4px;
+    background-color: transparent;
+    fill: var(--colors-grey800);
 }
 .dimension-item:hover .di-menu-trigger {
-  visibility: visible;
+    visibility: visible;
 }
 .dimension-item.disabled:hover .di-menu-trigger {
-  visibility: hidden;
+    visibility: hidden;
 }
 .di-menu-trigger:hover {
-  background-color: var(--colors-grey400);
+    background-color: var(--colors-grey400);
 }
 .di-menu-trigger:active {
-  background-color: #c6d2dc;
+    background-color: #c6d2dc;
 }
 .dimension-item.picked:hover .di-menu-trigger:hover {
-  background-color: #bbe2e0;
+    background-color: #bbe2e0;
 }
 .dimension-item.picked:hover .di-menu-trigger:active {
-  background-color: #a9dad7;
+    background-color: #a9dad7;
 }
 
 /* Recommended badge */
 .dimension-item.recommended .di-label:after {
-  content: ' ';
-  display: inline-block;
-  margin-left: 6px;
-  width: 8px;
-  height: 8px;
-  border-radius: 8px;
-  background-color: var(--colors-teal300);
+    content: ' ';
+    display: inline-block;
+    margin-left: 6px;
+    width: 8px;
+    height: 8px;
+    border-radius: 8px;
+    background-color: var(--colors-teal300);
 }
 
 /* Item States */
 .dimension-item:hover {
-  background-color: var(--colors-grey300);
-  color: var(--colors-grey900);
+    background-color: var(--colors-grey200);
 }
 .dimension-item:active {
-  background-color: #d8e1e9;
+    background-color: #d8e1e9;
 }
 
 .dimension-item.picked {
-  background-color: var(--colors-teal100);
-  color: var(--colors-teal900);
-  fill: var(--colors-teal800);
-  font-weight: 500;
+    background-color: var(--colors-teal100);
+    color: var(--colors-teal900);
+    fill: var(--colors-teal800);
+    font-weight: 500;
 }
 
 .dimension-item.picked:hover {
-  background-color: #cdeae8;
+    background-color: #cdeae8;
 }
 .dimension-item.picked:active {
-  background-color: #bbe2e0;
+    background-color: #bbe2e0;
 }
 
 .dimension-item.disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
+    opacity: 0.5;
+    cursor: not-allowed;
 }
 .dimension-item.disabled:hover {
-  background-color: unset;
+    background-color: unset;
 }
 
-/* wrapper */
+/* wrapper -- demo only */
 .dimension-list {
-  width: 260px;
-  background: var(--colors-grey200);
-  padding: var(--spacers-dp8);
+    width: 260px;
+    background: white;
+    padding: var(--spacers-dp8);
 }
